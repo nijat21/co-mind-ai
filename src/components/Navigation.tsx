@@ -14,7 +14,8 @@ export function Navigation() {
             <img 
               src="/lovable-uploads/334588fd-a145-4826-a0df-6765f7dd80bc.png" 
               alt="Co-mind Logo" 
-              className="h-8 w-8"
+              className="h-8 w-8 brightness-0 saturate-100 invert-[0.4] sepia-[1] hue-rotate-[200deg] brightness-[1.2]"
+              style={{ filter: 'brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(120%)' }}
             />
             <span className="text-xl font-bold text-white">Co-mind</span>
           </div>
