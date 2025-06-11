@@ -1,5 +1,6 @@
 
 import { Brain, Database, Cog, Users, Shield, Zap } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const features = [
   {
@@ -35,10 +36,34 @@ const features = [
 ];
 
 export function FeaturesSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="features" className="py-24 bg-gray-950/50">
+    <section 
+      ref={sectionRef}
+      id="features" 
+      className="py-24 bg-gray-900/30 backdrop-blur-sm"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Everything you need for
             <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> AI transformation</span>
@@ -52,16 +77,20 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="feature-card p-6 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 hover:border-primary-500/50 p-6 rounded-xl hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-primary-500/25
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ 
+                transitionDelay: `${index * 0.1}s`,
+                background: 'linear-gradient(135deg, rgba(31, 42, 68, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%)'
+              }}
             >
               <div className="flex items-center mb-4">
-                <div className="p-2 bg-primary-500/20 rounded-lg mr-4">
+                <div className="p-3 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg mr-4 border border-primary-500/30">
                   <feature.icon className="h-6 w-6 text-primary-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
               </div>
-              <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              <p className="text-gray-300 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

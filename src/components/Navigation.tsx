@@ -2,15 +2,19 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/334588fd-a145-4826-a0df-6765f7dd80bc.png" 
               alt="Co-mind Logo" 
@@ -18,21 +22,39 @@ export function Navigation() {
               style={{ filter: 'brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(120%)' }}
             />
             <span className="text-xl font-bold text-white">Co-mind</span>
-          </div>
+          </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="#features" 
+              className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
+            >
               Features
             </a>
-            <a href="#security" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="#security" 
+              className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
+            >
               Security
             </a>
-            <a href="#deployment" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="#deployment" 
+              className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
+            >
               Deployment
             </a>
-            <a href="#about" className="text-gray-300 hover:text-white transition-colors">
+            <Link 
+              to="/about" 
+              className={`text-gray-300 hover:text-white transition-colors ${isActive('/about') ? 'text-white border-b border-primary-400' : ''}`}
+            >
               About
-            </a>
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`text-gray-300 hover:text-white transition-colors ${isActive('/contact') ? 'text-white border-b border-primary-400' : ''}`}
+            >
+              Contact
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -70,9 +92,12 @@ export function Navigation() {
               <a href="#deployment" className="block px-3 py-2 text-gray-300 hover:text-white">
                 Deployment
               </a>
-              <a href="#about" className="block px-3 py-2 text-gray-300 hover:text-white">
+              <Link to="/about" className="block px-3 py-2 text-gray-300 hover:text-white">
                 About
-              </a>
+              </Link>
+              <Link to="/contact" className="block px-3 py-2 text-gray-300 hover:text-white">
+                Contact
+              </Link>
               <div className="flex flex-col space-y-2 px-3 pt-4">
                 <Button variant="ghost" className="justify-start text-gray-300 hover:text-white">
                   Sign In
