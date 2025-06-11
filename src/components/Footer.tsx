@@ -1,4 +1,3 @@
-
 import { Shield } from "lucide-react";
 
 export function Footer() {
@@ -8,7 +7,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <Shield className="h-8 w-8 text-primary-400" />
+              <img 
+                src="/lovable-uploads/334588fd-a145-4826-a0df-6765f7dd80bc.png" 
+                alt="Co-mind Logo" 
+                className="h-8 w-8"
+              />
               <span className="text-xl font-bold text-white">Co-mind</span>
             </div>
             <p className="text-gray-400 max-w-md">
