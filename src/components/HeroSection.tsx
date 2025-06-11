@@ -3,6 +3,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
 export function HeroSection() {
+  const handleBookDemo = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/co-mind/demo'
+      });
+    } else {
+      // Fallback to contact page
+      window.location.href = '/contact';
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Grid */}
@@ -45,7 +56,7 @@ export function HeroSection() {
               size="lg" 
               variant="outline" 
               className="border-gray-700 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg"
-              onClick={() => window.open('https://co-mind.ai/contact/', '_blank')}
+              onClick={handleBookDemo}
             >
               Book Demo
             </Button>

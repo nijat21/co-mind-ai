@@ -6,32 +6,38 @@ const features = [
   {
     icon: Brain,
     title: "AI Assistants & Agents",
-    description: "Deploy powerful AI assistants that understand your business context and automate complex workflows with intelligent agents."
+    description: "Deploy powerful AI assistants that understand your business context and automate complex workflows with intelligent agents.",
+    iconColor: "text-blue-400"
   },
   {
     icon: Database,
     title: "Connect All Data",
-    description: "Integrate structured and unstructured data from any source. Build knowledge bases that power informed AI decisions."
+    description: "Integrate structured and unstructured data from any source. Build knowledge bases that power informed AI decisions.",
+    iconColor: "text-green-400"
   },
   {
     icon: Shield,
     title: "Enterprise Security",
-    description: "Complete data sovereignty with on-premise deployment. No data leaves your network, ensuring compliance and privacy."
+    description: "Complete data sovereignty with on-premise deployment. No data leaves your network, ensuring compliance and privacy.",
+    iconColor: "text-red-400"
   },
   {
     icon: Cog,
     title: "Workflow Automation",
-    description: "Automate repetitive tasks with AI agents that handle data analysis, scheduling, and intelligent process orchestration."
+    description: "Automate repetitive tasks with AI agents that handle data analysis, scheduling, and intelligent process orchestration.",
+    iconColor: "text-purple-400"
   },
   {
     icon: Users,
     title: "Team Collaboration",
-    description: "Share knowledge seamlessly across teams with centralized AI-powered insights and collaborative workspaces."
+    description: "Share knowledge seamlessly across teams with centralized AI-powered insights and collaborative workspaces.",
+    iconColor: "text-yellow-400"
   },
   {
     icon: Zap,
     title: "Instant Deployment",
-    description: "Turnkey solution ready out-of-the-box. Deploy on any hardware from workstations to enterprise data centers."
+    description: "Turnkey solution ready out-of-the-box. Deploy on any hardware from workstations to enterprise data centers.",
+    iconColor: "text-orange-400"
   }
 ];
 
@@ -85,8 +91,8 @@ export function FeaturesSection() {
               }}
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg mr-4 border border-primary-500/30">
-                  <feature.icon className="h-6 w-6 text-primary-400" />
+                <div className="p-3 bg-gray-700/50 rounded-lg mr-4 border border-gray-600/50">
+                  <feature.icon className={`h-6 w-6 ${feature.iconColor}`} />
                 </div>
                 <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
               </div>

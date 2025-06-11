@@ -41,22 +41,26 @@ export function SecuritySection() {
                 {
                   icon: Shield,
                   title: "Complete Data Sovereignty",
-                  description: "Your data stays within your infrastructure. No external API calls, no data collection."
+                  description: "Your data stays within your infrastructure. No external API calls, no data collection.",
+                  iconColor: "text-blue-400"
                 },
                 {
                   icon: Lock,
                   title: "Self-Hosted Models",
-                  description: "Latest AI models run entirely on your hardware. No dependency on external services."
+                  description: "Latest AI models run entirely on your hardware. No dependency on external services.",
+                  iconColor: "text-green-400"
                 },
                 {
                   icon: Server,
                   title: "On-Premise Deployment",
-                  description: "Deploy on your data center, private cloud, or dedicated appliances."
+                  description: "Deploy on your data center, private cloud, or dedicated appliances.",
+                  iconColor: "text-purple-400"
                 },
                 {
                   icon: Eye,
                   title: "No Shadow AI",
-                  description: "Eliminate unauthorized AI usage with a controlled, enterprise-approved platform."
+                  description: "Eliminate unauthorized AI usage with a controlled, enterprise-approved platform.",
+                  iconColor: "text-red-400"
                 }
               ].map((item, index) => (
                 <div 
@@ -64,8 +68,8 @@ export function SecuritySection() {
                   className={`flex items-start space-x-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}
                   style={{ transitionDelay: `${(index + 2) * 0.1}s` }}
                 >
-                  <div className="p-2 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg border border-primary-500/30">
-                    <item.icon className="h-5 w-5 text-primary-400" />
+                  <div className="p-2 bg-gray-700/50 rounded-lg border border-gray-600/50">
+                    <item.icon className={`h-5 w-5 ${item.iconColor}`} />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">{item.title}</h4>

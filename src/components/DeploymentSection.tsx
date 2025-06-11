@@ -7,19 +7,22 @@ const deploymentOptions = [
     icon: Monitor,
     title: "AI Appliances",
     description: "Small form factor solutions for specialized teams. Deploy on workstations, servers, or dedicated AI PCs.",
-    features: ["Plug & Play Setup", "GPU Accelerated", "Team-Scale Deployment"]
+    features: ["Plug & Play Setup", "GPU Accelerated", "Team-Scale Deployment"],
+    iconColor: "text-blue-400"
   },
   {
     icon: Server,
     title: "Data Center",
     description: "Enterprise-scale deployment on your existing infrastructure. Supports all compute platforms.",
-    features: ["High Availability", "Scalable Architecture", "Enterprise Integration"]
+    features: ["High Availability", "Scalable Architecture", "Enterprise Integration"],
+    iconColor: "text-green-400"
   },
   {
     icon: Cloud,
     title: "Private Cloud",
     description: "Managed deployment on trusted private cloud providers with complete isolation.",
-    features: ["Managed Service", "Cloud Native", "Isolated Tenancy"]
+    features: ["Managed Service", "Cloud Native", "Isolated Tenancy"],
+    iconColor: "text-purple-400"
   }
 ];
 
@@ -69,8 +72,8 @@ export function DeploymentSection() {
               }}
             >
               <div className="mb-6">
-                <div className="p-3 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg w-fit mb-4 border border-primary-500/30">
-                  <option.icon className="h-8 w-8 text-primary-400" />
+                <div className="p-3 bg-gray-700/50 rounded-lg w-fit mb-4 border border-gray-600/50">
+                  <option.icon className={`h-8 w-8 ${option.iconColor}`} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{option.title}</h3>
                 <p className="text-gray-300">{option.description}</p>
