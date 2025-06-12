@@ -26,7 +26,7 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/#features" className="hover:text-white transition-colors">Features</Link></li>
-              <li><Link to="/#security" className="hover:text-white transition-colors">Privacy</Link></li>
+              <li><Link to="/#privacy" className="hover:text-white transition-colors">Privacy</Link></li>
               <li><Link to="/#deployment" className="hover:text-white transition-colors">Deployment</Link></li>
               <li><a href="https://app.co-mind.ai/register" target="_blank" className="hover:text-white transition-colors">Get Started</a></li>
             </ul>

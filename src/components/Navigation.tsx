@@ -25,24 +25,24 @@ export function Navigation() {
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#features" 
+            <Link 
+              to="/#features" 
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
             >
               Features
-            </a>
-            <a 
-              href="#security" 
+            </Link>
+            <Link 
+              to="/#privacy" 
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
             >
-              Security
-            </a>
-            <a 
-              href="#deployment" 
+              Privacy
+            </Link>
+            <Link 
+              to="/#deployment" 
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
             >
               Deployment
-            </a>
+            </Link>
             <Link 
               to="/about" 
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/about') ? 'text-white border-b border-primary-400' : ''}`}
@@ -83,15 +83,15 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md">
-              <a href="#features" className="block px-3 py-2 text-gray-300 hover:text-white">
+              <Link to="/#features" className="block px-3 py-2 text-gray-300 hover:text-white">
                 Features
-              </a>
-              <a href="#security" className="block px-3 py-2 text-gray-300 hover:text-white">
-                Security
-              </a>
-              <a href="#deployment" className="block px-3 py-2 text-gray-300 hover:text-white">
+              </Link>
+              <Link to="/#privacy" className="block px-3 py-2 text-gray-300 hover:text-white">
+                Privacy
+              </Link>
+              <Link to="/#deployment" className="block px-3 py-2 text-gray-300 hover:text-white">
                 Deployment
-              </a>
+              </Link>
               <Link to="/about" className="block px-3 py-2 text-gray-300 hover:text-white">
                 About
               </Link>
