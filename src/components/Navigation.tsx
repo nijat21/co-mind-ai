@@ -10,6 +10,19 @@ export function Navigation() {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleSectionClick = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // Navigate to home page first, then scroll to section
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,24 +38,24 @@ export function Navigation() {
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              to="/#features" 
+            <button 
+              onClick={() => handleSectionClick('features')}
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
             >
               Features
-            </Link>
-            <Link 
-              to="/#privacy" 
+            </button>
+            <button 
+              onClick={() => handleSectionClick('privacy')}
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
             >
               Privacy
-            </Link>
-            <Link 
-              to="/#deployment" 
+            </button>
+            <button 
+              onClick={() => handleSectionClick('deployment')}
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
             >
               Deployment
-            </Link>
+            </button>
             <Link 
               to="/about" 
               className={`text-gray-300 hover:text-white transition-colors ${isActive('/about') ? 'text-white border-b border-primary-400' : ''}`}
@@ -83,15 +96,24 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md">
-              <Link to="/#features" className="block px-3 py-2 text-gray-300 hover:text-white">
+              <button 
+                onClick={() => handleSectionClick('features')}
+                className="block px-3 py-2 text-gray-300 hover:text-white w-full text-left"
+              >
                 Features
-              </Link>
-              <Link to="/#privacy" className="block px-3 py-2 text-gray-300 hover:text-white">
+              </button>
+              <button 
+                onClick={() => handleSectionClick('privacy')}
+                className="block px-3 py-2 text-gray-300 hover:text-white w-full text-left"
+              >
                 Privacy
-              </Link>
-              <Link to="/#deployment" className="block px-3 py-2 text-gray-300 hover:text-white">
+              </button>
+              <button 
+                onClick={() => handleSectionClick('deployment')}
+                className="block px-3 py-2 text-gray-300 hover:text-white w-full text-left"
+              >
                 Deployment
-              </Link>
+              </button>
               <Link to="/about" className="block px-3 py-2 text-gray-300 hover:text-white">
                 About
               </Link>

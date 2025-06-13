@@ -1,8 +1,23 @@
 
 import { Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function Footer() {
+  const location = useLocation();
+
+  const handleSectionClick = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // Navigate to home page first, then scroll to section
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="border-t border-gray-800 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,9 +40,30 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/#features" className="hover:text-white transition-colors">Features</Link></li>
-              <li><Link to="/#privacy" className="hover:text-white transition-colors">Privacy</Link></li>
-              <li><Link to="/#deployment" className="hover:text-white transition-colors">Deployment</Link></li>
+              <li>
+                <button 
+                  onClick={() => handleSectionClick('features')}
+                  className="hover:text-white transition-colors"
+                >
+                  Features
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSectionClick('privacy')}
+                  className="hover:text-white transition-colors"
+                >
+                  Privacy
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleSectionClick('deployment')}
+                  className="hover:text-white transition-colors"
+                >
+                  Deployment
+                </button>
+              </li>
               <li><a href="https://app.co-mind.ai/register" target="_blank" className="hover:text-white transition-colors">Get Started</a></li>
             </ul>
           </div>
