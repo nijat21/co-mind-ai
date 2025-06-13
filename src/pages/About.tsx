@@ -72,8 +72,8 @@ const About = () => {
       <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            About
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Co-mind</span>
+            Meet Our
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Team</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Our team, spanning years of expertise, is united by a shared vision to deliver secure, private AI solutions for enterprises.
@@ -84,13 +84,6 @@ const About = () => {
       {/* Team Section */}
       <section ref={teamSectionRef} className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 transition-all duration-1000 ${isTeamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-400">
-              Experienced professionals dedicated to revolutionizing enterprise AI
-            </p>
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div 
@@ -119,9 +112,6 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 transition-all duration-1000 ${isAdvisorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Advisors</h2>
-            <p className="text-xl text-gray-400">
-              Strategic advisors guiding our vision and growth
-            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
