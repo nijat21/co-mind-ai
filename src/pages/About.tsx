@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
@@ -6,49 +5,69 @@ import { useEffect, useRef, useState } from "react";
 const teamMembers = [
   {
     name: "Levent Akyil",
-    role: "Co-founder",
-    image: "/api/placeholder/200/200"
+    role: "Co-founder | CTO",
+    image: "../../public/images/Levent.jpg",
+    about:
+      "Ex Intel, Intel Germany SW Leader, Senior Director of AI SW Libraries. Expert in computing, software architecture and development.",
   },
   {
     name: "Ralph de Wargny",
-    role: "Co-founder",
-    image: "/api/placeholder/200/200"
+    role: "Co-founder | COO",
+    image: "../../public/images/Ralph.jpg",
+    about:
+      "Ex Intel, Founder & Director of the global AI startup program Intel Liftoff. Wine entrepreneur.",
   },
   {
     name: "Daniel Barros",
-    role: "Full Stack Developer",
-    image: "/api/placeholder/200/200"
-  }
+    role: "Software Engineer",
+    image: "../../public/images/Daniel.jpg",
+    about:
+      "Daniel is a seasoned fullstack software engineer focused on AI applications, chatbots, and client-specific automation. \
+    Previously, he built e-commerce platforms, payment systems, API integrations and complex backend systems.",
+  },
+  {
+    name: "Samir Nasibli",
+    role: "AI Software Engineer",
+    image: "",
+    about: "",
+  },
+  {
+    name: "Nijat Ismayilov",
+    role: "Software Engineer | GTM",
+    image: "../../public/images/Nijat.jpg",
+    about:
+      "Nijat is a well-rounded generalist with international experience across diverse industries and roles. He is a competent software \
+      engineer working on web applications and early-stage product development.",
+  },
 ];
 
 const advisors = [
   {
     name: "Rene Bohnsack",
-    role: "Co-founder & Strategic Advisor",
-    image: "/api/placeholder/200/200"
+    role: "Strategic Advisor",
+    image: "../../public/images/Rene.jpg",
+    about:
+      "Serial entrepreneur.Professor for business model innovation, digital transformation and AI at Católica Lisbon School of Business & Economics \
+    and at Univ. St-Gallen, Switzerland.",
   },
   {
     name: "Günter Fuhrmeister",
-    role: "Co-founder & Strategic Advisor",
-    image: "/api/placeholder/200/200"
-  }
+    role: "Strategic Advisor",
+    image: "../../public/images/Gunter.jpg",
+    about:
+      "Serial entrepreneur. Formerly CEO at SIGS Datacom (acquired by Heyse Medien). Expert in B2B technology sales and marketing.",
+  },
 ];
 
 const About = () => {
   const [isTeamVisible, setIsTeamVisible] = useState(false);
-  const [isAdvisorsVisible, setIsAdvisorsVisible] = useState(false);
   const teamSectionRef = useRef<HTMLElement>(null);
-  const advisorsSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (entry.target === teamSectionRef.current) {
-            setIsTeamVisible(true);
-          } else if (entry.target === advisorsSectionRef.current) {
-            setIsAdvisorsVisible(true);
-          }
+          setIsTeamVisible(true);
         }
       },
       { threshold: 0.2 }
@@ -57,82 +76,74 @@ const About = () => {
     if (teamSectionRef.current) {
       observer.observe(teamSectionRef.current);
     }
-    if (advisorsSectionRef.current) {
-      observer.observe(advisorsSectionRef.current);
-    }
 
     return () => observer.disconnect();
   }, []);
 
+  const renderMembers = (members: any) => {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {members.map((member, index) => (
+          <div
+            key={index}
+            className={`bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
+            ${
+              isTeamVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+            style={{ transitionDelay: `${index * 0.1}s` }}
+          >
+            <div className="text-left">
+              <div className="w-32 h-32  mb-4 border-2 flex items-center justify-center rounded-xl">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="rounded-xl w-full h-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-white">
+                {member.name}
+              </h3>
+              <p className="text-primary-400 font-medium mb-2">{member.role}</p>
+              <p className="text-neutral-200 text-sm">{member.about}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-950">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="pt-24 pb-16">
+      <section className="pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Meet Our
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Team</span>
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+              {" "}
+              Team
+            </span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Our team, spanning years of expertise, is united by a shared vision to deliver secure, private AI solutions for enterprises.
+            Our team, spanning years of expertise, is united by a shared vision
+            to deliver secure, private AI solutions for enterprises.
           </p>
         </div>
       </section>
 
       {/* Team Section */}
-      <section ref={teamSectionRef} className="py-24">
+      <section ref={teamSectionRef} className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div 
-                key={index}
-                className={`bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
-                  ${isTeamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-primary-500/30 to-accent-500/30 rounded-full border-2 border-primary-500/50 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary-300">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                  <p className="text-primary-400 font-medium">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Advisors Section */}
-      <section ref={advisorsSectionRef} className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Advisors</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {advisors.map((advisor, index) => (
-              <div 
-                key={index}
-                className={`bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
-                  ${isAdvisorsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-accent-500/30 to-primary-500/30 rounded-full border-2 border-accent-500/50 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-accent-300">
-                      {advisor.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{advisor.name}</h3>
-                  <p className="text-accent-400 font-medium">{advisor.role}</p>
-                </div>
-              </div>
-            ))}
+          {renderMembers(teamMembers)}
+          <div className="py-10">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
+              Advisors
+            </h2>
+            {renderMembers(advisors)}
           </div>
         </div>
       </section>
