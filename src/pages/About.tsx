@@ -87,9 +87,13 @@ const About = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsTeamVisible(true);
+          // Calculate delay: last team member delay + animation duration + buffer
+          const lastMemberDelay = (teamMembers.length - 1) * 100; // 0.1s = 100ms
+          const animationDuration = 500; // transition duration
+          const buffer = 200; // small buffer
           setTimeout(() => {
             setIsAdvisorsVisible(true);
-          }, teamMembers.length * 100 + 500);
+          }, lastMemberDelay + animationDuration + buffer);
         }
       },
       { threshold: 0.2 }
