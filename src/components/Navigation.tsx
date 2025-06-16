@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -11,14 +10,14 @@ export function Navigation() {
   const isActive = (path: string) => location.pathname === path;
 
   const handleSectionClick = (sectionId: string) => {
-    if (location.pathname !== '/') {
+    if (location.pathname !== "/") {
       // Navigate to home page first, then scroll to section
       window.location.href = `/#${sectionId}`;
     } else {
       // Already on home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -28,43 +27,60 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/334588fd-a145-4826-a0df-6765f7dd80bc.png" 
-              alt="Co-mind Logo" 
+            <img
+              src="/logos/logo.png"
+              alt="Co-mind Logo"
               className="h-8 w-8 brightness-0 saturate-100 invert-[0.4] sepia-[1] hue-rotate-[200deg] brightness-[1.2]"
-              style={{ filter: 'brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(120%)' }}
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(120%)",
+              }}
             />
             <span className="text-xl font-bold text-white">Co-mind</span>
           </Link>
-          
+
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => handleSectionClick('features')}
-              className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
+            <button
+              onClick={() => handleSectionClick("features")}
+              className={`text-gray-300 hover:text-white transition-colors ${
+                isActive("/") ? "text-white" : ""
+              }`}
             >
               Features
             </button>
-            <button 
-              onClick={() => handleSectionClick('privacy')}
-              className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
+            <button
+              onClick={() => handleSectionClick("privacy")}
+              className={`text-gray-300 hover:text-white transition-colors ${
+                isActive("/") ? "text-white" : ""
+              }`}
             >
               Privacy
             </button>
-            <button 
-              onClick={() => handleSectionClick('deployment')}
-              className={`text-gray-300 hover:text-white transition-colors ${isActive('/') ? 'text-white' : ''}`}
+            <button
+              onClick={() => handleSectionClick("deployment")}
+              className={`text-gray-300 hover:text-white transition-colors ${
+                isActive("/") ? "text-white" : ""
+              }`}
             >
               Deployment
             </button>
-            <Link 
-              to="/about" 
-              className={`text-gray-300 hover:text-white transition-colors ${isActive('/about') ? 'text-white border-b border-primary-400' : ''}`}
+            <Link
+              to="/about"
+              className={`text-gray-300 hover:text-white transition-colors ${
+                isActive("/about")
+                  ? "text-white border-b border-primary-400"
+                  : ""
+              }`}
             >
               About
             </Link>
-            <Link 
-              to="/contact" 
-              className={`text-gray-300 hover:text-white transition-colors ${isActive('/contact') ? 'text-white border-b border-primary-400' : ''}`}
+            <Link
+              to="/contact"
+              className={`text-gray-300 hover:text-white transition-colors ${
+                isActive("/contact")
+                  ? "text-white border-b border-primary-400"
+                  : ""
+              }`}
             >
               Contact
             </Link>
@@ -74,9 +90,11 @@ export function Navigation() {
             <Button variant="ghost" className="text-gray-300 hover:text-white">
               Sign In
             </Button>
-            <Button 
+            <Button
               className="bg-primary-500 hover:bg-primary-600 text-white"
-              onClick={() => window.open('https://app.co-mind.ai/register', '_blank')}
+              onClick={() =>
+                window.open("https://app.co-mind.ai/register", "_blank")
+              }
             >
               Get Started
             </Button>
@@ -88,7 +106,11 @@ export function Navigation() {
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -96,37 +118,48 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md">
-              <button 
-                onClick={() => handleSectionClick('features')}
+              <button
+                onClick={() => handleSectionClick("features")}
                 className="block px-3 py-2 text-gray-300 hover:text-white w-full text-left"
               >
                 Features
               </button>
-              <button 
-                onClick={() => handleSectionClick('privacy')}
+              <button
+                onClick={() => handleSectionClick("privacy")}
                 className="block px-3 py-2 text-gray-300 hover:text-white w-full text-left"
               >
                 Privacy
               </button>
-              <button 
-                onClick={() => handleSectionClick('deployment')}
+              <button
+                onClick={() => handleSectionClick("deployment")}
                 className="block px-3 py-2 text-gray-300 hover:text-white w-full text-left"
               >
                 Deployment
               </button>
-              <Link to="/about" className="block px-3 py-2 text-gray-300 hover:text-white">
+              <Link
+                to="/about"
+                className="block px-3 py-2 text-gray-300 hover:text-white"
+              >
                 About
               </Link>
-              <Link to="/contact" className="block px-3 py-2 text-gray-300 hover:text-white">
+              <Link
+                to="/contact"
+                className="block px-3 py-2 text-gray-300 hover:text-white"
+              >
                 Contact
               </Link>
               <div className="flex flex-col space-y-2 px-3 pt-4">
-                <Button variant="ghost" className="justify-start text-gray-300 hover:text-white">
+                <Button
+                  variant="ghost"
+                  className="justify-start text-gray-300 hover:text-white"
+                >
                   Sign In
                 </Button>
-                <Button 
+                <Button
                   className="justify-start bg-primary-500 hover:bg-primary-600 text-white"
-                  onClick={() => window.open('https://app.co-mind.ai/register', '_blank')}
+                  onClick={() =>
+                    window.open("https://app.co-mind.ai/register", "_blank")
+                  }
                 >
                   Get Started
                 </Button>

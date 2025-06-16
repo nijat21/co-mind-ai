@@ -1,61 +1,77 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
+import SvgWrapper, { SvgId } from "@/components/General/SvgWrapper/SvgWrapper";
 
-const teamMembers = [
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  about: string;
+  linkedinUrl: string;
+}
+
+const teamMembers: TeamMember[] = [
   {
     name: "Levent Akyil",
     role: "Co-founder | CTO",
-    image: "../../public/images/Levent.jpg",
+    image: "../../public/images/team/Levent.jpg",
     about:
       "Ex Intel, Intel Germany SW Leader, Senior Director of AI SW Libraries. Expert in computing, software architecture and development.",
+    linkedinUrl: "",
   },
   {
     name: "Ralph de Wargny",
     role: "Co-founder | COO",
-    image: "../../public/images/Ralph.jpg",
+    image: "../../public/images/team/Ralph.jpg",
     about:
       "Ex Intel, Founder & Director of the global AI startup program Intel Liftoff. Wine entrepreneur.",
+    linkedinUrl: "",
   },
   {
     name: "Daniel Barros",
     role: "Software Engineer",
-    image: "../../public/images/Daniel.jpg",
+    image: "../../public/images/team/Daniel.jpg",
     about:
       "Daniel is a seasoned fullstack software engineer focused on AI applications, chatbots, and client-specific automation. \
     Previously, he built e-commerce platforms, payment systems, API integrations and complex backend systems.",
+    linkedinUrl: "",
   },
   {
     name: "Samir Nasibli",
     role: "AI Software Engineer",
     image: "",
     about: "",
+    linkedinUrl: "",
   },
   {
     name: "Nijat Ismayilov",
     role: "Software Engineer | GTM",
-    image: "../../public/images/Nijat.jpg",
+    image: "../../public/images/team/Nijat.jpg",
     about:
       "Nijat is a well-rounded generalist with international experience across diverse industries and roles. He is a competent software \
       engineer working on web applications and early-stage product development.",
+    linkedinUrl: "",
   },
 ];
 
-const advisors = [
+const advisors: TeamMember[] = [
   {
     name: "Rene Bohnsack",
     role: "Strategic Advisor",
-    image: "../../public/images/Rene.jpg",
+    image: "../../public/images/team/Rene.jpg",
     about:
       "Serial entrepreneur.Professor for business model innovation, digital transformation and AI at Católica Lisbon School of Business & Economics \
     and at Univ. St-Gallen, Switzerland.",
+    linkedinUrl: "",
   },
   {
     name: "Günter Fuhrmeister",
     role: "Strategic Advisor",
-    image: "../../public/images/Gunter.jpg",
+    image: "../../public/images/team/Gunter.jpg",
     about:
       "Serial entrepreneur. Formerly CEO at SIGS Datacom (acquired by Heyse Medien). Expert in B2B technology sales and marketing.",
+    linkedinUrl: "",
   },
 ];
 
@@ -80,7 +96,7 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const renderMembers = (members: any) => {
+  const renderMembers = (members: TeamMember[]) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {members.map((member, index) => (
@@ -102,9 +118,18 @@ const About = () => {
                   className="rounded-xl w-full h-full"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-white">
-                {member.name}
-              </h3>
+              <div className="flex gap-4">
+                <h3 className="text-xl font-semibold text-white">
+                  {member.name}
+                </h3>
+                <SvgWrapper
+                  id={SvgId.Linkedin}
+                  fill="primary-400"
+                  className="cursor-pointer"
+                  style={{ width: "30px", height: "30px" }}
+                  onClick={() => console.log("")}
+                />
+              </div>
               <p className="text-primary-400 font-medium mb-2">{member.role}</p>
               <p className="text-neutral-200 text-sm">{member.about}</p>
             </div>
