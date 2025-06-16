@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
@@ -87,13 +86,10 @@ const About = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsTeamVisible(true);
-          // Calculate delay: last team member delay + animation duration + buffer
-          const lastMemberDelay = (teamMembers.length - 1) * 100; // 0.1s = 100ms
-          const animationDuration = 500; // transition duration
-          const buffer = 200; // small buffer
+          // Start advisors animation after the last team member starts animating
           setTimeout(() => {
             setIsAdvisorsVisible(true);
-          }, lastMemberDelay + animationDuration + buffer);
+          }, teamMembers.length * 100);
         }
       },
       { threshold: 0.2 }
