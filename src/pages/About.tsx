@@ -1,3 +1,4 @@
+
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
@@ -77,26 +78,31 @@ const advisors: TeamMember[] = [
 
 const About = () => {
   const [isTeamVisible, setIsTeamVisible] = useState(false);
+  const [isAdvisorsVisible, setIsAdvisorsVisible] = useState(false);
   const teamSectionRef = useRef<HTMLElement>(null);
+  const advisorsSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const teamObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsTeamVisible(true);
+          setTimeout(() => {
+            setIsAdvisorsVisible(true);
+          }, teamMembers.length * 100 + 500);
         }
       },
       { threshold: 0.2 }
     );
 
     if (teamSectionRef.current) {
-      observer.observe(teamSectionRef.current);
+      teamObserver.observe(teamSectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => teamObserver.disconnect();
   }, []);
 
-  const renderMembers = (members: TeamMember[]) => {
+  const renderMembers = (members: TeamMember[], isVisible: boolean, startDelay: number = 0) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {members.map((member, index) => (
@@ -104,11 +110,11 @@ const About = () => {
             key={index}
             className={`bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
             ${
-              isTeamVisible
+              isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
-            style={{ transitionDelay: `${index * 0.1}s` }}
+            style={{ transitionDelay: `${startDelay + index * 0.1}s` }}
           >
             <div className="text-left">
               <div className="w-32 h-32  mb-4 border-2 flex items-center justify-center rounded-xl">
@@ -163,12 +169,12 @@ const About = () => {
       {/* Team Section */}
       <section ref={teamSectionRef} className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {renderMembers(teamMembers)}
-          <div className="py-10">
+          {renderMembers(teamMembers, isTeamVisible)}
+          <div ref={advisorsSectionRef} className="py-10">
             <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
               Advisors
             </h2>
-            {renderMembers(advisors)}
+            {renderMembers(advisors, isAdvisorsVisible, 0.5)}
           </div>
         </div>
       </section>
