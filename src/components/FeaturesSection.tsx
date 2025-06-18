@@ -1,12 +1,12 @@
+
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-// Open source LLM logos using the uploaded model icons
+// Open source LLM logos using the uploaded model icons (excluding Kokoro for single line fit)
 const openSourceLLMs = [
   { name: "Llama 3.3", icon: "/lovable-uploads/012e6198-fda0-4d6d-ac1d-9e5773efcd09.png" },
   { name: "Qwen 2.5", icon: "/lovable-uploads/6b6ba572-329e-4736-8e03-4935f46be540.png" },
   { name: "Nomic Embed", icon: "/lovable-uploads/5b05b1c9-40c3-4889-9687-59e1912a4314.png" },
-  { name: "Kokoro", icon: "/lovable-uploads/590e42f8-4e78-479a-9aa1-f1440ac04887.png" },
   { name: "DeepSeek R1", icon: "/lovable-uploads/22a48257-cd02-4e9c-a933-93d6a6eafc3b.png" },
   { name: "Mistral Small", icon: "/lovable-uploads/e48eb8cc-9e15-47dc-865b-52dc22296297.png" },
   { name: "Whisper Turbo", icon: "/lovable-uploads/1df51c30-2333-444e-bcf4-04330ae266fe.png" }
@@ -67,16 +67,16 @@ export function FeaturesSection() {
           {/* Supports Leading AI Models Section */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
-            <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+            <div className="flex justify-center gap-4 max-w-6xl mx-auto">
               {openSourceLLMs.map((llm, index) => (
                 <div 
                   key={index}
-                  className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-6 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105
+                  className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                   style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
                 >
-                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain" />
-                  <span className="text-gray-300 text-sm font-medium text-center">{llm.name}</span>
+                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain flex-shrink-0" />
+                  <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
                 </div>
               ))}
             </div>
