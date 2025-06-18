@@ -1,14 +1,15 @@
+
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Open source LLM logos using the uploaded model icons
 const openSourceLLMs = [
-  { name: "DeepSeek R1", icon: "/lovable-uploads/dd623ad3-e7cf-4d79-a56f-c582c1e6e1ce.png" },
-  { name: "Llama 3.3", icon: "/lovable-uploads/1d7e1f10-ec95-440b-b8dd-0b7b7a7dfe4e.png" },
-  { name: "Mistral Small", icon: "/lovable-uploads/9a8fd2db-6cae-4f79-8db4-e1dbf2ddbba0.png" },
-  { name: "Qwen 2.5", icon: "/lovable-uploads/5a58fe6e-e5a1-43c1-a43a-6db1d9b7c01d.png" },
-  { name: "Nomic Embed", icon: "/lovable-uploads/cacf960c-f0d7-4482-9c48-eeeedd4c727c.png" },
-  { name: "Kokoro", icon: "/lovable-uploads/75da509f-1cf1-4055-af55-27b12e4c1e1b.png" },
+  { name: "DeepSeek R1", icon: "/lovable-uploads/8b88f045-0005-45ce-ae8e-cf8cef058e1a.png" },
+  { name: "Llama 3.3", icon: "/lovable-uploads/d483298f-7036-43b9-b11b-d2d432cbc5ca.png" },
+  { name: "Mistral Small", icon: "/lovable-uploads/d8a5e414-2f88-43bf-925c-7c1734b05a74.png" },
+  { name: "Qwen 2.5", icon: "/lovable-uploads/ffcadfaa-1235-4c0b-ba02-8f1e70cf2874.png" },
+  { name: "Nomic Embed", icon: "/lovable-uploads/8dab4a8a-b6dd-4f29-a1a6-5b9200dcb169.png" },
+  { name: "Kokoro", icon: "/lovable-uploads/3dc16c41-d8a8-4757-81a7-67c556dc53a5.png" },
   { name: "Whisper Turbo", icon: "/lovable-uploads/c5a7c7b6-4a5a-4b53-b45c-2a8d8c8e8f8f.png" }
 ];
 
@@ -67,18 +68,20 @@ export function FeaturesSection() {
           {/* Supports Leading AI Models Section */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
-            <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-              {openSourceLLMs.map((llm, index) => (
-                <div 
-                  key={index}
-                  className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-6 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105
-                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-                  style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
-                >
-                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain" />
-                  <span className="text-gray-300 text-sm font-medium text-center">{llm.name}</span>
-                </div>
-              ))}
+            <div className="overflow-x-auto">
+              <div className="flex gap-6 justify-center min-w-max px-4">
+                {openSourceLLMs.map((llm, index) => (
+                  <div 
+                    key={index}
+                    className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-6 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 flex-shrink-0
+                      ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                    style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
+                  >
+                    <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain" />
+                    <span className="text-gray-300 text-sm font-medium text-center whitespace-nowrap">{llm.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
