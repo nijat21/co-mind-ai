@@ -1,14 +1,15 @@
+
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Open source LLM logos using the uploaded model icons
 const openSourceLLMs = [
-  { name: "DeepSeek R1", icon: "/lovable-uploads/dd623ad3-e7cf-4d79-a56f-c582c1e6e1ce.png" },
-  { name: "Llama 3.3", icon: "/lovable-uploads/1d7e1f10-ec95-440b-b8dd-0b7b7a7dfe4e.png" },
+  { name: "Llama 3.3", icon: "/lovable-uploads/012e6198-fda0-4d6d-ac1d-9e5773efcd09.png" },
+  { name: "Qwen 2.5", icon: "/lovable-uploads/6b6ba572-329e-4736-8e03-4935f46be540.png" },
+  { name: "Nomic Embed", icon: "/lovable-uploads/5b05b1c9-40c3-4889-9687-59e1912a4314.png" },
+  { name: "Kokoro", icon: "/lovable-uploads/590e42f8-4e78-479a-9aa1-f1440ac04887.png" },
+  { name: "DeepSeek R1", icon: "/lovable-uploads/22a48257-cd02-4e9c-a933-93d6a6eafc3b.png" },
   { name: "Mistral Small", icon: "/lovable-uploads/9a8fd2db-6cae-4f79-8db4-e1dbf2ddbba0.png" },
-  { name: "Qwen 2.5", icon: "/lovable-uploads/5a58fe6e-e5a1-43c1-a43a-6db1d9b7c01d.png" },
-  { name: "Nomic Embed", icon: "/lovable-uploads/cacf960c-f0d7-4482-9c48-eeeedd4c727c.png" },
-  { name: "Kokoro", icon: "/lovable-uploads/75da509f-1cf1-4055-af55-27b12e4c1e1b.png" },
   { name: "Whisper Turbo", icon: "/lovable-uploads/c5a7c7b6-4a5a-4b53-b45c-2a8d8c8e8f8f.png" }
 ];
 
