@@ -1,4 +1,3 @@
-
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -9,8 +8,8 @@ const openSourceLLMs = [
   { name: "Nomic Embed", icon: "/lovable-uploads/5b05b1c9-40c3-4889-9687-59e1912a4314.png" },
   { name: "Kokoro", icon: "/lovable-uploads/590e42f8-4e78-479a-9aa1-f1440ac04887.png" },
   { name: "DeepSeek R1", icon: "/lovable-uploads/22a48257-cd02-4e9c-a933-93d6a6eafc3b.png" },
-  { name: "Mistral Small", icon: "/lovable-uploads/9a8fd2db-6cae-4f79-8db4-e1dbf2ddbba0.png" },
-  { name: "Whisper Turbo", icon: "/lovable-uploads/c5a7c7b6-4a5a-4b53-b45c-2a8d8c8e8f8f.png" }
+  { name: "Mistral Small", icon: "/lovable-uploads/e48eb8cc-9e15-47dc-865b-52dc22296297.png" },
+  { name: "Whisper Turbo", icon: "/lovable-uploads/1df51c30-2333-444e-bcf4-04330ae266fe.png" }
 ];
 
 const solutionFeatures = [
