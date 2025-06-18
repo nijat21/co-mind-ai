@@ -1,14 +1,15 @@
 
+
 import { Monitor, Server, Cloud } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const deploymentOptions = [
   {
-    icon: Monitor,
-    title: "AI Appliances",
-    description: "Small form factor solutions for specialized teams. Deploy on workstations, servers, or dedicated AI PCs.",
-    features: ["Plug & Play Setup", "GPU Accelerated", "Team-Scale Deployment"],
-    iconColor: "text-blue-400"
+    icon: Cloud,
+    title: "Private Cloud",
+    description: "Managed deployment on trusted private cloud providers with complete isolation.",
+    features: ["Managed Service", "Cloud Native", "Isolated Tenancy"],
+    iconColor: "text-purple-400"
   },
   {
     icon: Server,
@@ -18,11 +19,11 @@ const deploymentOptions = [
     iconColor: "text-green-400"
   },
   {
-    icon: Cloud,
-    title: "Private Cloud",
-    description: "Managed deployment on trusted private cloud providers with complete isolation.",
-    features: ["Managed Service", "Cloud Native", "Isolated Tenancy"],
-    iconColor: "text-purple-400"
+    icon: Monitor,
+    title: "AI Appliances",
+    description: "Small form factor solutions for specialized teams. Deploy on workstations, servers, or dedicated AI PCs.",
+    features: ["Plug & Play Setup", "GPU Accelerated", "Team-Scale Deployment"],
+    iconColor: "text-blue-400"
   }
 ];
 
@@ -94,3 +95,4 @@ export function DeploymentSection() {
     </section>
   );
 }
+

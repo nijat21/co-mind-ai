@@ -1,4 +1,5 @@
 
+
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -60,24 +61,26 @@ export function FeaturesSection() {
             Secure AI Chat with
             <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Open Source Models</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-8">
+          <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-12">
             Chat with powerful AI models that run entirely on your infrastructure. Choose from any open source LLM and deploy on your private servers - no data ever leaves your environment.
           </p>
           
-          {/* Open Source LLM Icons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className="text-gray-400 font-medium mr-4">Supported Models:</span>
-            {openSourceLLMs.map((llm, index) => (
-              <div 
-                key={index}
-                className={`flex items-center space-x-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 px-3 py-1 rounded-lg transition-all duration-500
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-                style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
-              >
-                <span className="text-lg">{llm.icon}</span>
-                <span className="text-gray-300 text-sm font-medium">{llm.name}</span>
-              </div>
-            ))}
+          {/* Supports Leading AI Models Section */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
+            <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+              {openSourceLLMs.map((llm, index) => (
+                <div 
+                  key={index}
+                  className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-6 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                  style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
+                >
+                  <span className="text-3xl">{llm.icon}</span>
+                  <span className="text-gray-300 text-sm font-medium text-center">{llm.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         
@@ -172,3 +175,4 @@ export function FeaturesSection() {
     </section>
   );
 }
+

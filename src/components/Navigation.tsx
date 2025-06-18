@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -87,7 +88,11 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-300 hover:text-white">
+            <Button 
+              variant="ghost" 
+              className="text-gray-300 hover:text-white"
+              onClick={() => window.open("https://app.co-mind.ai/login", "_blank")}
+            >
               Sign In
             </Button>
             <Button
@@ -152,6 +157,7 @@ export function Navigation() {
                 <Button
                   variant="ghost"
                   className="justify-start text-gray-300 hover:text-white"
+                  onClick={() => window.open("https://app.co-mind.ai/login", "_blank")}
                 >
                   Sign In
                 </Button>
@@ -171,3 +177,4 @@ export function Navigation() {
     </nav>
   );
 }
+
