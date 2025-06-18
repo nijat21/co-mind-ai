@@ -1,4 +1,3 @@
-
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -63,22 +62,6 @@ export function FeaturesSection() {
           <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-8">
             Chat with powerful AI models that run entirely on your infrastructure. Choose from any open source LLM and deploy on your private servers - no data ever leaves your environment.
           </p>
-          
-          {/* Open Source LLM Icons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className="text-gray-400 font-medium mr-4">Supported Models:</span>
-            {openSourceLLMs.map((llm, index) => (
-              <div 
-                key={index}
-                className={`flex items-center space-x-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 px-3 py-1 rounded-lg transition-all duration-500
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-                style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
-              >
-                <span className="text-lg">{llm.icon}</span>
-                <span className="text-gray-300 text-sm font-medium">{llm.name}</span>
-              </div>
-            ))}
-          </div>
         </div>
         
         {/* Visual Solution Diagram */}
