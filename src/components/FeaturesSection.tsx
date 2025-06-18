@@ -1,16 +1,15 @@
-
-
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-// Open source LLM logos using the models from the uploaded image
+// Open source LLM logos using the uploaded model icons
 const openSourceLLMs = [
-  { name: "DeepSeek R1", icon: "🔍" },
-  { name: "Mistral Small", icon: "🌪️" },
-  { name: "Llama 3.3", icon: "🦙" },
-  { name: "Qwen 2.5", icon: "🔷" },
-  { name: "Whisper Turbo", icon: "🌀" },
-  { name: "Nomic Embed", icon: "📊" }
+  { name: "DeepSeek R1", icon: "/lovable-uploads/dd623ad3-e7cf-4d79-a56f-c582c1e6e1ce.png" },
+  { name: "Llama 3.3", icon: "/lovable-uploads/1d7e1f10-ec95-440b-b8dd-0b7b7a7dfe4e.png" },
+  { name: "Mistral Small", icon: "/lovable-uploads/9a8fd2db-6cae-4f79-8db4-e1dbf2ddbba0.png" },
+  { name: "Qwen 2.5", icon: "/lovable-uploads/5a58fe6e-e5a1-43c1-a43a-6db1d9b7c01d.png" },
+  { name: "Nomic Embed", icon: "/lovable-uploads/cacf960c-f0d7-4482-9c48-eeeedd4c727c.png" },
+  { name: "Kokoro", icon: "/lovable-uploads/75da509f-1cf1-4055-af55-27b12e4c1e1b.png" },
+  { name: "Whisper Turbo", icon: "/lovable-uploads/c5a7c7b6-4a5a-4b53-b45c-2a8d8c8e8f8f.png" }
 ];
 
 const solutionFeatures = [
@@ -76,7 +75,7 @@ export function FeaturesSection() {
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                   style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
                 >
-                  <span className="text-3xl">{llm.icon}</span>
+                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain" />
                   <span className="text-gray-300 text-sm font-medium text-center">{llm.name}</span>
                 </div>
               ))}
@@ -175,4 +174,3 @@ export function FeaturesSection() {
     </section>
   );
 }
-
