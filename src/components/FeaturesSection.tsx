@@ -116,13 +116,33 @@ export function FeaturesSection() {
                     <Server className="h-8 w-8 text-green-400 mr-3" />
                     <h3 className="text-2xl font-bold text-white">Your Private Server</h3>
                   </div>
-                  <div className="bg-gray-700/30 rounded-lg p-4 border border-green-400/30">
+                  <div className="bg-gray-700/30 rounded-lg p-4 border border-green-400/30 mb-4">
                     <div className="flex items-center justify-center space-x-4">
                       <Shield className="h-12 w-12 text-green-400" />
                       <div>
                         <p className="text-green-400 font-semibold">100% Private</p>
                         <p className="text-gray-400 text-sm">Your infrastructure</p>
                       </div>
+                    </div>
+                  </div>
+                  
+                  {/* Open Source Models on Private Server */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center space-x-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 px-2 py-1 rounded text-xs">
+                      <span>🦙</span>
+                      <span className="text-gray-300">Llama</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 px-2 py-1 rounded text-xs">
+                      <span>🌪️</span>
+                      <span className="text-gray-300">Mistral</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 px-2 py-1 rounded text-xs">
+                      <span>🦅</span>
+                      <span className="text-gray-300">Falcon</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 px-2 py-1 rounded text-xs">
+                      <span>💻</span>
+                      <span className="text-gray-300">CodeLlama</span>
                     </div>
                   </div>
                 </div>
@@ -147,27 +167,6 @@ export function FeaturesSection() {
               <p className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto">{feature.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Key Benefits */}
-        <div className={`mt-16 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '1s' }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center">
-              <Shield className="h-8 w-8 text-primary-400 mb-3" />
-              <h4 className="text-white font-semibold mb-2">Zero Data Exposure</h4>
-              <p className="text-gray-400 text-sm">No data leaves your environment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Database className="h-8 w-8 text-primary-400 mb-3" />
-              <h4 className="text-white font-semibold mb-2">Complete Control</h4>
-              <p className="text-gray-400 text-sm">You own and control all AI models</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Users className="h-8 w-8 text-primary-400 mb-3" />
-              <h4 className="text-white font-semibold mb-2">Enterprise Ready</h4>
-              <p className="text-gray-400 text-sm">Scales from teams to enterprises</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
