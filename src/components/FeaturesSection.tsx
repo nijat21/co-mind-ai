@@ -1,43 +1,43 @@
 
-import { Brain, Database, Cog, Users, Shield, Zap } from "lucide-react";
+import { MessageSquare, FileText, Database, Bot, Shield, Server } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const features = [
   {
-    icon: Brain,
-    title: "AI Assistants & Agents",
-    description: "Deploy powerful AI assistants that understand your business context and automate complex workflows with intelligent agents.",
+    icon: MessageSquare,
+    title: "AI Chat Interface",
+    description: "Intuitive chat interface to interact with your private AI models. Ask questions, get insights, and work with AI assistants securely.",
     iconColor: "text-blue-400"
   },
   {
-    icon: Database,
-    title: "Connect All Data",
-    description: "Integrate structured and unstructured data from any source. Build knowledge bases that power informed AI decisions.",
+    icon: FileText,
+    title: "Document Processing",
+    description: "Upload and attach documents directly to your conversations. Your AI can analyze, summarize, and extract insights from your files.",
     iconColor: "text-green-400"
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Complete data sovereignty with on-premise deployment. No data leaves your network, ensuring compliance and privacy.",
-    iconColor: "text-red-400"
-  },
-  {
-    icon: Cog,
-    title: "Workflow Automation",
-    description: "Automate repetitive tasks with AI agents that handle data analysis, scheduling, and intelligent process orchestration.",
+    icon: Database,
+    title: "Knowledge Bases",
+    description: "Build comprehensive knowledge bases from your data. Create searchable repositories that power intelligent AI responses.",
     iconColor: "text-purple-400"
   },
   {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Share knowledge seamlessly across teams with centralized AI-powered insights and collaborative workspaces.",
-    iconColor: "text-yellow-400"
+    icon: Bot,
+    title: "AI Agents",
+    description: "Deploy specialized AI agents for specific tasks and workflows. Automate processes while maintaining full control over your data.",
+    iconColor: "text-orange-400"
   },
   {
-    icon: Zap,
-    title: "Instant Deployment",
-    description: "Turnkey solution ready out-of-the-box. Deploy on any hardware from workstations to enterprise data centers.",
-    iconColor: "text-orange-400"
+    icon: Shield,
+    title: "Private & Secure",
+    description: "Everything runs on your infrastructure. No data leaves your environment, ensuring complete privacy and compliance.",
+    iconColor: "text-red-400"
+  },
+  {
+    icon: Server,
+    title: "Any Open Source LLM",
+    description: "Choose from any open source language model. Deploy on private cloud, data centers, or AI appliances - your choice.",
+    iconColor: "text-yellow-400"
   }
 ];
 
@@ -72,10 +72,10 @@ export function FeaturesSection() {
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Everything you need for
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> AI transformation</span>
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> private AI</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Co-mind provides a complete AI platform that puts your enterprise in control of artificial intelligence.
+            Complete AI platform that runs entirely on your infrastructure. Chat with AI, process documents, and deploy agents - all while keeping your data private.
           </p>
         </div>
         
