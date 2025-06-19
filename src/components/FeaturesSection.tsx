@@ -63,24 +63,6 @@ export function FeaturesSection() {
           <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-12">
             Chat with powerful AI models that run entirely on your infrastructure. Choose from any open source LLM and deploy on your private servers - no data ever leaves your environment.
           </p>
-          
-          {/* Supports Leading AI Models Section */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
-            <div className="flex justify-center gap-4 max-w-6xl mx-auto">
-              {openSourceLLMs.map((llm, index) => (
-                <div 
-                  key={index}
-                  className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
-                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-                  style={{ transitionDelay: `${0.5 + index * 0.1}s` }}
-                >
-                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain flex-shrink-0" />
-                  <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
         
         {/* Visual Solution Diagram */}
@@ -133,6 +115,26 @@ export function FeaturesSection() {
           </div>
         </div>
 
+        {/* Supports Leading AI Models Section */}
+        <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.5s' }}>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
+            <div className="flex justify-center gap-4 max-w-6xl mx-auto">
+              {openSourceLLMs.map((llm, index) => (
+                <div 
+                  key={index}
+                  className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                  style={{ transitionDelay: `${0.6 + index * 0.1}s` }}
+                >
+                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain flex-shrink-0" />
+                  <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Core Features */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {solutionFeatures.map((feature, index) => (
@@ -140,7 +142,7 @@ export function FeaturesSection() {
               key={index} 
               className={`text-center transition-all duration-500
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${0.6 + index * 0.2}s` }}
+              style={{ transitionDelay: `${0.8 + index * 0.2}s` }}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl mb-6">
                 <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
