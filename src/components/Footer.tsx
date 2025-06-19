@@ -1,3 +1,4 @@
+
 import { Shield } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -110,13 +111,37 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2025 Co-mind. All rights reserved.
-          </p>
-          <p className="text-gray-500 text-sm mt-4 md:mt-0">
-            Secure AI • Private Deployment • Enterprise Ready
-          </p>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+            <p className="text-gray-400 text-sm">
+              © 2025 Co-mind. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-sm mt-4 md:mt-0">
+              Secure AI • Private Deployment • Enterprise Ready
+            </p>
+          </div>
+          
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-gray-500">
+            <Link
+              to="/legal-notice"
+              className="hover:text-gray-300 transition-colors"
+            >
+              Legal Notice
+            </Link>
+            <Link
+              to="/privacy-notice"
+              className="hover:text-gray-300 transition-colors"
+            >
+              Privacy Notice
+            </Link>
+            <Link
+              to="/cookie-policy"
+              className="hover:text-gray-300 transition-colors"
+            >
+              Cookie Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
