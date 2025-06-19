@@ -104,7 +104,7 @@ const Contact = () => {
                   onClick={() => {
                     if (window.Calendly) {
                       window.Calendly.initPopupWidget({
-                        url: 'https://calendly.com/co-mind/demo'
+                        url: 'https://calendly.com/comind-ai-social/30min'
                       });
                     } else {
                       window.open('https://co-mind.ai/contact/', '_blank');

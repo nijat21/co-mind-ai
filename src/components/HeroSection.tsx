@@ -12,7 +12,7 @@ export function HeroSection() {
   const handleBookDemo = () => {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: "https://calendly.com/co-mind/demo",
+        url: "https://calendly.com/comind-ai-social/30min",
       });
     } else {
       // Fallback to contact page
