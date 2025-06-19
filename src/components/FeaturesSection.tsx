@@ -1,3 +1,4 @@
+
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -100,12 +101,16 @@ export function FeaturesSection() {
                     <h3 className="text-2xl font-bold text-white">Your Private Server</h3>
                   </div>
                   <div className="bg-gray-700/30 rounded-lg p-4 border border-green-400/30">
-                    <div className="flex items-center justify-center space-x-4">
+                    <div className="flex items-center justify-center space-x-4 mb-3">
                       <Shield className="h-12 w-12 text-green-400" />
                       <div>
                         <p className="text-green-400 font-semibold">100% Private</p>
                         <p className="text-gray-400 text-sm">Your infrastructure</p>
                       </div>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-primary-400 text-sm font-medium">Running Open Source LLMs</p>
+                      <p className="text-gray-500 text-xs">DeepSeek, Llama, Mistral & more</p>
                     </div>
                   </div>
                 </div>
