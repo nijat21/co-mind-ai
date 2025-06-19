@@ -11,7 +11,11 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-gray-950 relative">
+      {/* Global background grid and glow effects */}
+      <div className="fixed inset-0 grid-bg opacity-20"></div>
+      <div className="fixed inset-0 hero-glow opacity-60"></div>
+      
       <Navigation />
       <HeroSection />
       <FeaturesSection />

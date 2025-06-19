@@ -1,5 +1,4 @@
 
-
 import { Monitor, Server, Cloud } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -49,7 +48,7 @@ export function DeploymentSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="deployment" className="py-24 bg-gray-900/30 backdrop-blur-sm">
+    <section ref={sectionRef} id="deployment" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -65,15 +64,15 @@ export function DeploymentSection() {
           {deploymentOptions.map((option, index) => (
             <div 
               key={index} 
-              className={`bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 hover:border-primary-500/50 rounded-xl p-6 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-primary-500/25
+              className={`bg-gray-800/40 backdrop-blur-sm border border-gray-700/30 hover:border-primary-500/50 rounded-xl p-6 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-primary-500/25
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ 
                 transitionDelay: `${index * 0.2}s`,
-                background: 'linear-gradient(135deg, rgba(31, 42, 68, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%)'
+                background: 'linear-gradient(135deg, rgba(31, 42, 68, 0.4) 0%, rgba(17, 24, 39, 0.6) 100%)'
               }}
             >
               <div className="mb-6">
-                <div className="p-3 bg-gray-700/50 rounded-lg w-fit mb-4 border border-gray-600/50">
+                <div className="p-3 bg-gray-700/30 rounded-lg w-fit mb-4 border border-gray-600/30">
                   <option.icon className={`h-8 w-8 ${option.iconColor}`} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{option.title}</h3>
@@ -95,4 +94,3 @@ export function DeploymentSection() {
     </section>
   );
 }
-
