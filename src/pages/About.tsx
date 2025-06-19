@@ -120,9 +120,7 @@ const About = () => {
                 : "opacity-0 translate-y-10"
             }`}
             style={{ transitionDelay: `${startDelay + index * 0.1}s` }}
-            onClick={() => {
-              window.open(member.linkedinUrl, "_blank");
-            }}
+            
           >
             <div className="text-left">
               <div className="w-32 h-32  mb-4 border-2 flex items-center justify-center rounded-xl">
@@ -141,6 +139,9 @@ const About = () => {
                   fill="white"
                   className="cursor-pointer"
                   style={{ width: "30px", height: "30px" }}
+                  onClick={() => {
+              window.open(member.linkedinUrl, "_blank");
+            }}
                 />
               </div>
               <p className="text-primary-400 font-medium mb-2">{member.role}</p>
