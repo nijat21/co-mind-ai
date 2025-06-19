@@ -1,3 +1,4 @@
+
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -24,14 +25,6 @@ const solutionFeatures = [
     description: "Deploy on your private cloud, data centers, or AI appliances. Complete control over where your AI runs and how your data is processed.",
     iconColor: "text-green-400"
   }
-];
-
-const partners = [
-  { name: "Y Combinator", logo: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=120&h=60&fit=crop&crop=center" },
-  { name: "NVIDIA", logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=120&h=60&fit=crop&crop=center" },
-  { name: "MIT", logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&h=60&fit=crop&crop=center" },
-  { name: "Intel", logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=120&h=60&fit=crop&crop=center" },
-  { name: "Cloudflare", logo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=120&h=60&fit=crop&crop=center" }
 ];
 
 export function FeaturesSection() {
@@ -112,8 +105,8 @@ export function FeaturesSection() {
                       </div>
                     </div>
                     <div className="text-center">
-                      <p className="text-primary-400 text-sm font-medium">Running Open Source LLMs</p>
-                      <p className="text-gray-500 text-xs">DeepSeek, Llama, Mistral & more</p>
+                      <p className="text-primary-400 text-sm font-medium">Running Open Large Language Models (OLLMs)</p>
+                      <p className="text-gray-500 text-xs">DeepSeek R1, Llama, Mistral & more</p>
                     </div>
                   </div>
                 </div>
@@ -141,7 +134,7 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {solutionFeatures.map((feature, index) => (
             <div 
               key={index} 
@@ -156,28 +149,6 @@ export function FeaturesSection() {
               <p className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto">{feature.description}</p>
             </div>
           ))}
-        </div>
-
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '1.2s' }}>
-          <div className="text-center">
-            <h3 className="text-lg font-medium text-gray-400 mb-8 tracking-wider uppercase">Our Partners and Advisors</h3>
-            <div className="flex justify-center items-center gap-12 max-w-4xl mx-auto flex-wrap">
-              {partners.map((partner, index) => (
-                <div 
-                  key={index}
-                  className={`transition-all duration-500 hover:scale-105 opacity-60 hover:opacity-100
-                    ${isVisible ? 'opacity-60' : 'opacity-0'}`}
-                  style={{ transitionDelay: `${1.3 + index * 0.1}s` }}
-                >
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name} 
-                    className="h-12 w-auto object-contain filter brightness-0 invert opacity-60"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,14 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
+
+const partners = [
+  { name: "Y Combinator", logo: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=120&h=60&fit=crop&crop=center" },
+  { name: "NVIDIA", logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=120&h=60&fit=crop&crop=center" },
+  { name: "MIT", logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&h=60&fit=crop&crop=center" },
+  { name: "Intel", logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=120&h=60&fit=crop&crop=center" },
+  { name: "Cloudflare", logo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=120&h=60&fit=crop&crop=center" }
+];
 
 export function HeroSection() {
   const handleBookDemo = () => {
@@ -67,7 +76,7 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400 mb-16">
             <div className="flex items-center gap-2">
               <Lock className="h-4 w-4" />
               <span>100% Private</span>
@@ -79,6 +88,24 @@ export function HeroSection() {
             <div className="flex items-center gap-2">
               <Zap className="h-4 w-4" />
               <span>Deploy in Minutes</span>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-lg font-medium text-gray-400 mb-8 tracking-wider uppercase">Our Partners and Advisors</h3>
+            <div className="flex justify-center items-center gap-12 max-w-4xl mx-auto flex-wrap">
+              {partners.map((partner, index) => (
+                <div 
+                  key={index}
+                  className="transition-all duration-500 hover:scale-105 opacity-60 hover:opacity-100"
+                >
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name} 
+                    className="h-12 w-auto object-contain filter brightness-0 invert opacity-60"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
