@@ -32,7 +32,11 @@ export function TestimonialSection() {
             "Co-mind revolutionizes how we interact with data and documents. A private GPT to multiply ERA's productivity, with advanced collaboration and knowledge-sharing across our network using AI assistants and agents deployed with a secure and reliable turnkey solution."
           </blockquote>
           <div className="flex items-center justify-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-500/30 to-accent-500/30 rounded-full border border-primary-500/50"></div>
+            <img 
+              src="/lovable-uploads/4a160400-5104-41c2-a9da-c46bdaddc38a.png" 
+              alt="João Costa"
+              className="w-12 h-12 rounded-full object-cover border border-primary-500/50"
+            />
             <div className="text-left">
               <p className="text-white font-semibold">João Costa</p>
               <p className="text-gray-400">Country Manager, ERA Group Portugal</p>
