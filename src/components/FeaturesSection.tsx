@@ -61,7 +61,7 @@ export function FeaturesSection() {
             <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Open Source Models</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-12">
-            Chat with powerful AI models that run entirely on your infrastructure. Choose from any open source LLM and deploy on your private servers - no data ever leaves your environment.
+            Our complete solution combines private AI chat with your own secure infrastructure. Chat with powerful AI models that run entirely on your private servers - giving you both the AI chat interface and the self-hosted deployment. No data ever leaves your environment.
           </p>
         </div>
         
