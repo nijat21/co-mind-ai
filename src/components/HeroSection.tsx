@@ -95,7 +95,7 @@ export function HeroSection() {
               {partners.map((partner, index) => (
                 <div 
                   key={index}
-                  className="transition-all duration-500 hover:scale-105 opacity-60 hover:opacity-100"
+                  className="opacity-60"
                 >
                   <img 
                     src={partner.logo} 
