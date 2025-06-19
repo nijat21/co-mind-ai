@@ -1,4 +1,3 @@
-
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -22,7 +21,6 @@ const openSourceLLMs = [{
   name: "Nomic Embed",
   icon: "/lovable-uploads/5b05b1c9-40c3-4889-9687-59e1912a4314.png"
 }];
-
 const solutionFeatures = [{
   icon: MessageSquare,
   title: "Private AI Chat",
@@ -34,11 +32,9 @@ const solutionFeatures = [{
   description: "Deploy on your private cloud, data centers, or AI appliances. Complete control over where your AI runs and how your data is processed.",
   iconColor: "text-green-400"
 }];
-
 export function FeaturesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -47,20 +43,13 @@ export function FeaturesSection() {
     }, {
       threshold: 0.2
     });
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <section ref={sectionRef} id="features" className="relative py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-800">
-      {/* Background Grid */}
-      <div className="absolute inset-0 grid-bg opacity-20"></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  return <section ref={sectionRef} id="features" className="py-24 bg-gray-900/30 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Secure AI Chat with
@@ -70,8 +59,8 @@ export function FeaturesSection() {
         </div>
         
         <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
-          transitionDelay: '0.3s'
-        }}>
+        transitionDelay: '0.3s'
+      }}>
           <div className="relative max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 mb-8">
               <div className="flex items-center justify-between">
@@ -122,39 +111,34 @@ export function FeaturesSection() {
         </div>
 
         <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
-          transitionDelay: '0.5s'
-        }}>
+        transitionDelay: '0.5s'
+      }}>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
             <div className="flex justify-center gap-4 max-w-6xl mx-auto">
-              {openSourceLLMs.map((llm, index) => (
-                <div key={index} className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
+              {openSourceLLMs.map((llm, index) => <div key={index} className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{
-                  transitionDelay: `${0.6 + index * 0.1}s`
-                }}>
+              transitionDelay: `${0.6 + index * 0.1}s`
+            }}>
                   <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain flex-shrink-0" />
                   <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {solutionFeatures.map((feature, index) => (
-            <div key={index} className={`text-center transition-all duration-500
+          {solutionFeatures.map((feature, index) => <div key={index} className={`text-center transition-all duration-500
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
-              transitionDelay: `${0.8 + index * 0.2}s`
-            }}>
+          transitionDelay: `${0.8 + index * 0.2}s`
+        }}>
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl mb-6">
                 <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
               <p className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto">{feature.description}</p>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
