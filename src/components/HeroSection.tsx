@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
@@ -99,7 +100,7 @@ export function HeroSection() {
                   <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="h-16 w-auto object-contain filter brightness-110 saturate-110"
+                    className="h-14 w-auto object-contain filter brightness-110 saturate-110"
                   />
                 </div>
               ))}
