@@ -46,7 +46,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Nijat Ismayilov",
-    role: "Software Engineer | GTM",
+    role: "Software Engineer | GTM Execution",
     image: "../../public/images/team/Nijat.jpg",
     about:
       "Nijat is a well-rounded generalist with international experience across diverse industries and roles. He is a competent software \
