@@ -61,7 +61,10 @@
 }
 
 .hero-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(33, 83, 252, 0.3) 0%, transparent 50%);
+  background: 
+    url('/lovable-uploads/b2238bdb-7ad0-4bb3-af14-846794b1820e.png') center center / cover no-repeat,
+    radial-gradient(circle at 50% 50%, rgba(33, 83, 252, 0.3) 0%, transparent 50%);
+  background-blend-mode: multiply;
 }
 
 .feature-card {
