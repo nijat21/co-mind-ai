@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useEffect, useRef, useState } from "react";
@@ -41,7 +40,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Samir Nasibli",
     role: "AI Software Engineer",
-    image: "",
+    image: "/lovable-uploads/ba68b790-af17-40c4-8121-8261e6b270c0.png",
     about: "Samir is a dedicated AI Frameworks Engineer, specializing in machine learning and AI framework development. Previously, he served as a Machine Learning Engineer, contributing to advanced data-driven solutions.",
     linkedinUrl: "https://www.linkedin.com/in/samir-nasibli/",
   },
