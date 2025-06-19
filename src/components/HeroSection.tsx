@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
 const partners = [
-  { name: "Y Combinator", logo: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=120&h=60&fit=crop&crop=center" },
-  { name: "NVIDIA", logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=120&h=60&fit=crop&crop=center" },
-  { name: "MIT", logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&h=60&fit=crop&crop=center" },
-  { name: "Intel", logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=120&h=60&fit=crop&crop=center" },
-  { name: "Cloudflare", logo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=120&h=60&fit=crop&crop=center" }
+  { name: "NVIDIA Inception", logo: "/lovable-uploads/c04c2e38-c1f5-4a6c-8045-d6b03f854fd7.png" },
+  { name: "Intel Liftoff", logo: "/lovable-uploads/783cb563-1da3-458c-9e40-28e16d5c2928.png" },
+  { name: "Microsoft Founders Hub", logo: "/lovable-uploads/2228e84e-97b2-41c7-a431-8199f0b962a4.png" }
 ];
 
 export function HeroSection() {
@@ -102,7 +99,7 @@ export function HeroSection() {
                   <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="h-12 w-auto object-contain filter brightness-0 invert opacity-60"
+                    className="h-12 w-auto object-contain"
                   />
                 </div>
               ))}
