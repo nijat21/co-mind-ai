@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -71,22 +72,42 @@
 .grid-bg {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at center, transparent 40%, rgba(33, 83, 252, 0.03) 70%);
+  background: radial-gradient(circle at center, rgba(33, 83, 252, 0.05) 0%, transparent 70%);
 }
 
 .grid-bg::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: 
-    linear-gradient(rgba(33, 83, 252, 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(33, 83, 252, 0.4) 1px, transparent 1px);
-  background-size: 40px 40px;
-  transform-origin: center center;
-  animation: grid-warp 8s ease-in-out infinite;
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(33, 83, 252, 0.3) 40px,
+      rgba(33, 83, 252, 0.3) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(33, 83, 252, 0.3) 40px,
+      rgba(33, 83, 252, 0.3) 41px
+    );
+  mask: 
+    radial-gradient(ellipse 200% 100% at 50% 50%, black 0%, black 30%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 70%, transparent 80%),
+    radial-gradient(ellipse 150% 80% at 50% 50%, black 0%, black 35%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.3) 75%, transparent 85%),
+    radial-gradient(ellipse 120% 60% at 50% 50%, black 0%, black 40%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.2) 80%, transparent 90%);
+  mask-composite: multiply;
+  -webkit-mask: 
+    radial-gradient(ellipse 200% 100% at 50% 50%, black 0%, black 30%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 70%, transparent 80%),
+    radial-gradient(ellipse 150% 80% at 50% 50%, black 0%, black 35%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.3) 75%, transparent 85%),
+    radial-gradient(ellipse 120% 60% at 50% 50%, black 0%, black 40%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.2) 80%, transparent 90%);
+  -webkit-mask-composite: source-in;
+  animation: grid-curve 8s ease-in-out infinite;
 }
 
 .grid-bg::after {
@@ -94,59 +115,48 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   transform: translate(-50%, -50%);
   background: radial-gradient(
     circle at center,
     rgba(33, 83, 252, 0.8) 0%,
-    rgba(33, 83, 252, 0.4) 20%,
-    rgba(33, 83, 252, 0.2) 40%,
-    rgba(33, 83, 252, 0.1) 60%,
+    rgba(33, 83, 252, 0.6) 20%,
+    rgba(33, 83, 252, 0.4) 40%,
+    rgba(33, 83, 252, 0.2) 60%,
     transparent 80%
   );
   border-radius: 50%;
   animation: gravity-pulse 6s ease-in-out infinite;
-  filter: blur(1px);
+  filter: blur(2px);
 }
 
-@keyframes grid-warp {
+@keyframes grid-curve {
   0%, 100% {
-    transform: perspective(800px) rotateX(0deg) scale(1);
-    filter: blur(0px);
+    transform: scale(1) perspective(1000px) rotateX(0deg);
+    filter: brightness(1);
   }
   25% {
-    transform: perspective(800px) rotateX(3deg) scale(1.02);
-    filter: blur(0.3px);
+    transform: scale(1.02) perspective(1000px) rotateX(1deg);
+    filter: brightness(1.1);
   }
   50% {
-    transform: perspective(800px) rotateX(0deg) scale(1.05);
-    filter: blur(0px);
+    transform: scale(1.05) perspective(1000px) rotateX(0deg);
+    filter: brightness(1.2);
   }
   75% {
-    transform: perspective(800px) rotateX(-3deg) scale(1.02);
-    filter: blur(0.3px);
+    transform: scale(1.02) perspective(1000px) rotateX(-1deg);
+    filter: brightness(1.1);
   }
 }
 
 @keyframes gravity-pulse {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
+    opacity: 0.7;
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.15);
-    opacity: 0.9;
-  }
-}
-
-@keyframes spacetime-warp {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.2);
     opacity: 1;
   }
 }
