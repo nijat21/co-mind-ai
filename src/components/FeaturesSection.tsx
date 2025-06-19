@@ -1,4 +1,3 @@
-
 import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -25,6 +24,14 @@ const solutionFeatures = [
     description: "Deploy on your private cloud, data centers, or AI appliances. Complete control over where your AI runs and how your data is processed.",
     iconColor: "text-green-400"
   }
+];
+
+const partners = [
+  { name: "Y Combinator", logo: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=120&h=60&fit=crop&crop=center" },
+  { name: "NVIDIA", logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=120&h=60&fit=crop&crop=center" },
+  { name: "MIT", logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&h=60&fit=crop&crop=center" },
+  { name: "Intel", logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=120&h=60&fit=crop&crop=center" },
+  { name: "Cloudflare", logo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=120&h=60&fit=crop&crop=center" }
 ];
 
 export function FeaturesSection() {
@@ -65,10 +72,8 @@ export function FeaturesSection() {
           </p>
         </div>
         
-        {/* Visual Solution Diagram */}
         <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.3s' }}>
           <div className="relative max-w-4xl mx-auto">
-            {/* Chat Interface Visual */}
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 mb-8">
               <div className="flex items-center justify-between">
                 <div className="flex-1">
@@ -86,7 +91,6 @@ export function FeaturesSection() {
                   </div>
                 </div>
                 
-                {/* Arrow */}
                 <div className="mx-8">
                   <div className="flex items-center text-primary-400">
                     <div className="h-0.5 w-12 bg-primary-400"></div>
@@ -94,7 +98,6 @@ export function FeaturesSection() {
                   </div>
                 </div>
                 
-                {/* Private Server Visual */}
                 <div className="flex-1">
                   <div className="flex items-center mb-4">
                     <Server className="h-8 w-8 text-green-400 mr-3" />
@@ -119,7 +122,6 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        {/* Supports Leading AI Models Section */}
         <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.5s' }}>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
@@ -139,8 +141,7 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        {/* Core Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {solutionFeatures.map((feature, index) => (
             <div 
               key={index} 
@@ -155,6 +156,28 @@ export function FeaturesSection() {
               <p className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto">{feature.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '1.2s' }}>
+          <div className="text-center">
+            <h3 className="text-lg font-medium text-gray-400 mb-8 tracking-wider uppercase">Our Partners and Advisors</h3>
+            <div className="flex justify-center items-center gap-12 max-w-4xl mx-auto flex-wrap">
+              {partners.map((partner, index) => (
+                <div 
+                  key={index}
+                  className={`transition-all duration-500 hover:scale-105 opacity-60 hover:opacity-100
+                    ${isVisible ? 'opacity-60' : 'opacity-0'}`}
+                  style={{ transitionDelay: `${1.3 + index * 0.1}s` }}
+                >
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name} 
+                    className="h-12 w-auto object-contain filter brightness-0 invert opacity-60"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
