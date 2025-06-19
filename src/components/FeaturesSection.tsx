@@ -100,7 +100,7 @@ export function FeaturesSection() {
                     <div className="flex items-center justify-center space-x-4 mb-3">
                       <Shield className="h-12 w-12 text-green-400" />
                       <div>
-                        <p className="text-green-400 font-semibold">100% Private</p>
+                        <p className="text-green-400 font-semibold">Self Hosted</p>
                         <p className="text-gray-400 text-sm">Your infrastructure</p>
                       </div>
                     </div>
