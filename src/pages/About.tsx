@@ -112,7 +112,7 @@ const About = () => {
         {members.map((member, index) => (
           <div
             key={index}
-            className={`cursor-pointer bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm 
+            className={`bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm 
               rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
             ${
               isVisible
