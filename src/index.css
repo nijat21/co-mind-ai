@@ -71,8 +71,8 @@
 
 .grid-bg {
   background-image: 
-    linear-gradient(rgba(33, 83, 252, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(33, 83, 252, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(33, 83, 252, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 83, 252, 0.3) 1px, transparent 1px);
   background-size: 50px 50px;
   position: relative;
   overflow: hidden;
@@ -86,7 +86,10 @@
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 50% 50%, transparent 20%, rgba(33, 83, 252, 0.15) 40%, rgba(33, 83, 252, 0.08) 60%, transparent 80%);
+    linear-gradient(rgba(33, 83, 252, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 83, 252, 0.4) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, transparent 20%, rgba(33, 83, 252, 0.1) 40%, rgba(33, 83, 252, 0.05) 60%, transparent 80%);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
   mask: 
     radial-gradient(ellipse 800px 400px at 50% 50%, black 0%, black 30%, transparent 70%),
     radial-gradient(ellipse 600px 300px at 50% 50%, transparent 0%, transparent 40%, black 60%, black 80%, transparent 100%),
@@ -99,6 +102,7 @@
   -webkit-mask-composite: source-over;
   transform: perspective(1000px) rotateX(25deg);
   animation: spacetime-warp 8s ease-in-out infinite alternate;
+  filter: contrast(1.2) brightness(1.1);
 }
 
 .grid-bg::after {
@@ -109,9 +113,13 @@
   width: 200px;
   height: 200px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(33, 83, 252, 0.4) 0%, rgba(33, 83, 252, 0.2) 30%, transparent 70%);
+  background: radial-gradient(circle, rgba(33, 83, 252, 0.5) 0%, rgba(33, 83, 252, 0.3) 30%, rgba(33, 83, 252, 0.1) 50%, transparent 70%);
   border-radius: 50%;
   animation: gravity-well 6s ease-in-out infinite alternate;
+  box-shadow: 
+    0 0 50px rgba(33, 83, 252, 0.3),
+    0 0 100px rgba(33, 83, 252, 0.2),
+    inset 0 0 30px rgba(33, 83, 252, 0.4);
 }
 
 @keyframes spacetime-warp {
