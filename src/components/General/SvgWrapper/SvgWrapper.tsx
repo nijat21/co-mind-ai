@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import iconLinkedin from "../../../../public/images/icons/linkedin-svgrepo-com.svg";
+// import iconLinkedin from "../../../../public/images/icons/linkedin.svg";
 import iconLogo from "../../../../public/logos/logo.png";
 
 export enum SvgId {
@@ -29,7 +30,6 @@ const SvgWrapper: React.FC<SvgData> = ({
 
   className += "transition-all duration-700";
   if (onClick) style = { ...style, cursor: "pointer" };
-  console.log("iconLinkedin.src", iconLinkedin);
 
   useEffect(() => {
     switch (id) {
@@ -60,7 +60,9 @@ const SvgWrapper: React.FC<SvgData> = ({
   const customizeSvgData = () => {
     if ([SvgId.Logo.toString()].includes(id)) return;
     let pivot: string = svgData;
-    if (fill) pivot = pivot.replace(/fill="[^"]*"/g, `class="fill-${fill}"`);
+    if (fill) {
+      pivot = pivot.replace(/fill="[^"]*"/g, `class="fill-${fill}"`);
+    }
     pivot = pivot.replace(/width="[^"]*"/g, `width="100%"`);
     pivot = pivot.replace(/height="[^"]*"/g, `height="100%"`);
     setCustomSvgData(pivot);

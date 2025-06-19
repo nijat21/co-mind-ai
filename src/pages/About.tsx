@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
     image: "../../public/images/team/Levent.jpg",
     about:
       "Ex Intel, Intel Germany SW Leader, Senior Director of AI SW Libraries. Expert in computing, software architecture and development.",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/leventakyil/",
   },
   {
     name: "Ralph de Wargny",
@@ -26,7 +26,7 @@ const teamMembers: TeamMember[] = [
     image: "../../public/images/team/Ralph.jpg",
     about:
       "Ex Intel, Founder & Director of the global AI startup program Intel Liftoff. Wine entrepreneur.",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/ralphdw/",
   },
   {
     name: "Daniel Barros",
@@ -35,23 +35,23 @@ const teamMembers: TeamMember[] = [
     about:
       "Daniel is a seasoned fullstack software engineer focused on AI applications, chatbots, and client-specific automation. \
     Previously, he built e-commerce platforms, payment systems, API integrations and complex backend systems.",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/luisdanielbarros/",
   },
   {
     name: "Samir Nasibli",
     role: "AI Software Engineer",
     image: "",
     about: "",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/samir-nasibli/",
   },
   {
     name: "Nijat Ismayilov",
     role: "Software Engineer | GTM Execution",
     image: "../../public/images/team/Nijat.jpg",
     about:
-      "Nijat is a well-rounded generalist with international experience across diverse industries and roles. He is a competent software \
+      "Nijat is a well-rounded generalist with international experience across diverse industries and roles. He is also a competent software \
       engineer working on web applications and early-stage product development.",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/nijat-ismayilov/",
   },
 ];
 
@@ -63,7 +63,7 @@ const advisors: TeamMember[] = [
     about:
       "Serial entrepreneur.Professor for business model innovation, digital transformation and AI at Católica Lisbon School of Business & Economics \
     and at Univ. St-Gallen, Switzerland.",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/renebohnsack/",
   },
   {
     name: "Günter Fuhrmeister",
@@ -71,7 +71,7 @@ const advisors: TeamMember[] = [
     image: "../../public/images/team/Gunter.jpg",
     about:
       "Serial entrepreneur. Formerly CEO at SIGS Datacom (acquired by Heyse Medien). Expert in B2B technology sales and marketing.",
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/g%C3%BCnter-fuhrmeister-bb9684/",
   },
 ];
 
@@ -102,19 +102,27 @@ const About = () => {
     return () => teamObserver.disconnect();
   }, []);
 
-  const renderMembers = (members: TeamMember[], isVisible: boolean, startDelay: number = 0) => {
+  const renderMembers = (
+    members: TeamMember[],
+    isVisible: boolean,
+    startDelay: number = 0
+  ) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {members.map((member, index) => (
           <div
             key={index}
-            className={`bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
+            className={`cursor-pointer bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm 
+              rounded-2xl p-6 border border-gray-700/50 hover:border-primary-500/50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-primary-500/25
             ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
             style={{ transitionDelay: `${startDelay + index * 0.1}s` }}
+            onClick={() => {
+              window.open(member.linkedinUrl, "_blank");
+            }}
           >
             <div className="text-left">
               <div className="w-32 h-32  mb-4 border-2 flex items-center justify-center rounded-xl">
@@ -124,16 +132,15 @@ const About = () => {
                   className="rounded-xl w-full h-full"
                 />
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-2">
                 <h3 className="text-xl font-semibold text-white">
                   {member.name}
                 </h3>
                 <SvgWrapper
                   id={SvgId.Linkedin}
-                  fill="primary-400"
+                  fill="white"
                   className="cursor-pointer"
                   style={{ width: "30px", height: "30px" }}
-                  onClick={() => console.log("")}
                 />
               </div>
               <p className="text-primary-400 font-medium mb-2">{member.role}</p>
