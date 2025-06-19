@@ -1,9 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
 const partners = [
   { name: "NVIDIA", logo: "/lovable-uploads/d6f17c4a-455b-43c0-a2e2-57989baef211.png" },
-  { name: "Intel", logo: "/lovable-uploads/518ea543-352e-42e7-bd29-e119990cff15.png" },
+  { name: "Intel", logo: "/lovable-uploads/c5325e87-6100-4385-b193-e1e2cec00426.png" },
   { name: "Microsoft Founders Hub", logo: "/lovable-uploads/b5dfab8c-6b7c-49bf-81bc-9e836e953dd7.png" }
 ];
 
