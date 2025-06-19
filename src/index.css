@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,96 +70,8 @@
 }
 
 .grid-bg {
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(circle at center, rgba(33, 83, 252, 0.05) 0%, transparent 70%);
-}
-
-.grid-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 39px,
-      rgba(33, 83, 252, 0.4) 40px,
-      rgba(33, 83, 252, 0.4) 41px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 39px,
-      rgba(33, 83, 252, 0.4) 40px,
-      rgba(33, 83, 252, 0.4) 41px
-    );
-  transform-origin: center center;
-  filter: url('#warp-filter');
-  animation: grid-distortion 8s ease-in-out infinite;
-}
-
-.grid-bg::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle at center,
-    rgba(33, 83, 252, 0.8) 0%,
-    rgba(33, 83, 252, 0.6) 20%,
-    rgba(33, 83, 252, 0.4) 40%,
-    rgba(33, 83, 252, 0.2) 60%,
-    transparent 80%
-  );
-  border-radius: 50%;
-  animation: gravity-pulse 6s ease-in-out infinite;
-  filter: blur(2px);
-}
-
-@keyframes grid-distortion {
-  0%, 100% {
-    transform: perspective(1200px) rotateX(0deg) scale(1);
-    filter: brightness(1) url('#warp-filter');
-  }
-  25% {
-    transform: perspective(1200px) rotateX(2deg) scale(1.02);
-    filter: brightness(1.1) url('#warp-filter');
-  }
-  50% {
-    transform: perspective(1200px) rotateX(0deg) scale(1.05);
-    filter: brightness(1.2) url('#warp-filter');
-  }
-  75% {
-    transform: perspective(1200px) rotateX(-2deg) scale(1.02);
-    filter: brightness(1.1) url('#warp-filter');
-  }
-}
-
-@keyframes gravity-pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 1;
-  }
-}
-
-@keyframes gravity-well {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.9;
-  }
+    linear-gradient(rgba(33, 83, 252, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 83, 252, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
 }

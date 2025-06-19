@@ -22,29 +22,8 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Grid with Curvature */}
+      {/* Background Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
-      
-      {/* SVG Filter for Grid Distortion */}
-      <svg width="0" height="0" className="absolute">
-        <defs>
-          <filter id="warp-filter">
-            <feTurbulence 
-              type="fractalNoise" 
-              baseFrequency="0.02" 
-              numOctaves="3"
-              result="noise"
-            />
-            <feDisplacementMap 
-              in="SourceGraphic" 
-              in2="noise" 
-              scale="15"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-        </defs>
-      </svg>
 
       {/* Hero Glow */}
       <div className="absolute inset-0 hero-glow"></div>
