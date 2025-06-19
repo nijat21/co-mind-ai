@@ -1,11 +1,12 @@
 
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
 const partners = [
   { name: "NVIDIA", logo: "/lovable-uploads/d6f17c4a-455b-43c0-a2e2-57989baef211.png" },
-  { name: "Intel", logo: "/lovable-uploads/b5dfab8c-6b7c-49bf-81bc-9e836e953dd7.png" },
-  { name: "Microsoft Founders Hub", logo: "/lovable-uploads/66087509-cc2d-45b7-8ca7-855e6028ed2b.png" }
+  { name: "Intel", logo: "/lovable-uploads/c16868b8-b669-4c86-a195-6ab0b8390412.png" },
+  { name: "Microsoft Founders Hub", logo: "/lovable-uploads/b5dfab8c-6b7c-49bf-81bc-9e836e953dd7.png" }
 ];
 
 export function HeroSection() {
@@ -100,7 +101,7 @@ export function HeroSection() {
                   <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="h-14 w-auto object-contain filter brightness-110 saturate-110"
+                    className="h-14 w-auto object-contain filter grayscale brightness-75 opacity-70"
                   />
                 </div>
               ))}
@@ -111,3 +112,4 @@ export function HeroSection() {
     </section>
   );
 }
+
