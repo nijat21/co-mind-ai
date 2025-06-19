@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,27 +86,19 @@
       0deg,
       transparent,
       transparent 39px,
-      rgba(33, 83, 252, 0.3) 40px,
-      rgba(33, 83, 252, 0.3) 41px
+      rgba(33, 83, 252, 0.4) 40px,
+      rgba(33, 83, 252, 0.4) 41px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 39px,
-      rgba(33, 83, 252, 0.3) 40px,
-      rgba(33, 83, 252, 0.3) 41px
+      rgba(33, 83, 252, 0.4) 40px,
+      rgba(33, 83, 252, 0.4) 41px
     );
-  mask: 
-    radial-gradient(ellipse 200% 100% at 50% 50%, black 0%, black 30%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 70%, transparent 80%),
-    radial-gradient(ellipse 150% 80% at 50% 50%, black 0%, black 35%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.3) 75%, transparent 85%),
-    radial-gradient(ellipse 120% 60% at 50% 50%, black 0%, black 40%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.2) 80%, transparent 90%);
-  mask-composite: multiply;
-  -webkit-mask: 
-    radial-gradient(ellipse 200% 100% at 50% 50%, black 0%, black 30%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 70%, transparent 80%),
-    radial-gradient(ellipse 150% 80% at 50% 50%, black 0%, black 35%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.3) 75%, transparent 85%),
-    radial-gradient(ellipse 120% 60% at 50% 50%, black 0%, black 40%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.2) 80%, transparent 90%);
-  -webkit-mask-composite: source-in;
-  animation: grid-curve 8s ease-in-out infinite;
+  transform-origin: center center;
+  filter: url('#warp-filter');
+  animation: grid-distortion 8s ease-in-out infinite;
 }
 
 .grid-bg::after {
@@ -131,22 +122,22 @@
   filter: blur(2px);
 }
 
-@keyframes grid-curve {
+@keyframes grid-distortion {
   0%, 100% {
-    transform: scale(1) perspective(1000px) rotateX(0deg);
-    filter: brightness(1);
+    transform: perspective(1200px) rotateX(0deg) scale(1);
+    filter: brightness(1) url('#warp-filter');
   }
   25% {
-    transform: scale(1.02) perspective(1000px) rotateX(1deg);
-    filter: brightness(1.1);
+    transform: perspective(1200px) rotateX(2deg) scale(1.02);
+    filter: brightness(1.1) url('#warp-filter');
   }
   50% {
-    transform: scale(1.05) perspective(1000px) rotateX(0deg);
-    filter: brightness(1.2);
+    transform: perspective(1200px) rotateX(0deg) scale(1.05);
+    filter: brightness(1.2) url('#warp-filter');
   }
   75% {
-    transform: scale(1.02) perspective(1000px) rotateX(-1deg);
-    filter: brightness(1.1);
+    transform: perspective(1200px) rotateX(-2deg) scale(1.02);
+    filter: brightness(1.1) url('#warp-filter');
   }
 }
 
