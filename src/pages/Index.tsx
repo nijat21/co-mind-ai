@@ -15,10 +15,14 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <FeaturesSection />
-      <VideoSection />
-      <SecuritySection />
+      <div className="bg-gray-800">
+        <VideoSection />
+        <SecuritySection />
+      </div>
       <DeploymentSection />
-      <TestimonialSection />
+      <div className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600">
+        <TestimonialSection />
+      </div>
       <CTASection />
       <Footer />
     </div>

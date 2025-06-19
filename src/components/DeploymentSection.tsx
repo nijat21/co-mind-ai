@@ -1,5 +1,4 @@
 
-
 import { Monitor, Server, Cloud } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -49,8 +48,11 @@ export function DeploymentSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="deployment" className="py-24 bg-gray-900/30 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} id="deployment" className="relative py-24 bg-gray-800">
+      {/* Background Grid */}
+      <div className="absolute inset-0 grid-bg opacity-15"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Deploy anywhere,
@@ -95,4 +97,3 @@ export function DeploymentSection() {
     </section>
   );
 }
-

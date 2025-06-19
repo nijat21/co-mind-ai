@@ -37,8 +37,11 @@ export function CTASection() {
   };
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-primary-900/20 to-accent-900/20 backdrop-blur-sm">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section ref={sectionRef} className="relative py-24 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600">
+      {/* Background Grid */}
+      <div className="absolute inset-0 grid-bg opacity-10"></div>
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to transform your enterprise with
