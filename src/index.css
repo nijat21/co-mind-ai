@@ -74,4 +74,17 @@
     linear-gradient(rgba(33, 83, 252, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(33, 83, 252, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
+  position: relative;
+}
+
+.grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/lovable-uploads/954e01b3-f32a-4693-8a9f-2118566ca025.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
 }
