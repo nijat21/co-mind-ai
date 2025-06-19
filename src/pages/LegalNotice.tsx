@@ -1,4 +1,5 @@
 
+
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -8,7 +9,7 @@ const LegalNotice = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-10">
+      <section className="pt-24 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl md:text-4xl font-bold text-white mb-6">
             Impressum / 
@@ -160,3 +161,4 @@ const LegalNotice = () => {
 };
 
 export default LegalNotice;
+
