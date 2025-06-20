@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
@@ -47,7 +48,7 @@ export function HeroSection() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Co-mind puts enterprises in control of AI with an all-in-one, self-hosted solution that protects your confidential data.
+            Take control of AI with Co-mind's self-hosted platform. Keep your confidential data secure while unlocking enterprise-grade AI capabilities.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
