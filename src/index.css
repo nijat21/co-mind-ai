@@ -75,4 +75,5 @@
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.03;
+  filter: hue-rotate(200deg) saturate(1.5) brightness(0.8);
 }
