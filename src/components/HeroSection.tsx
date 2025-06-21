@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
@@ -23,17 +24,6 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
-
-      {/* Contrasted Grid Squares */}
-      <div className="absolute inset-0">
-        <div className="absolute w-[120px] h-[120px] bg-primary-500/5 border border-primary-500/10" style={{ top: '15%', left: '8%' }}></div>
-        <div className="absolute w-[120px] h-[120px] bg-accent-500/5 border border-accent-500/10" style={{ top: '25%', right: '12%' }}></div>
-        <div className="absolute w-[120px] h-[120px] bg-primary-500/5 border border-primary-500/10" style={{ top: '45%', left: '5%' }}></div>
-        <div className="absolute w-[120px] h-[120px] bg-secondary-500/5 border border-secondary-500/10" style={{ top: '35%', right: '25%' }}></div>
-        <div className="absolute w-[120px] h-[120px] bg-accent-500/5 border border-accent-500/10" style={{ bottom: '20%', left: '15%' }}></div>
-        <div className="absolute w-[120px] h-[120px] bg-primary-500/5 border border-primary-500/10" style={{ bottom: '35%', right: '8%' }}></div>
-        <div className="absolute w-[120px] h-[120px] bg-secondary-500/5 border border-secondary-500/10" style={{ top: '60%', left: '45%' }}></div>
-      </div>
 
       {/* Hero Glow */}
       <div className="absolute inset-0 hero-glow"></div>
