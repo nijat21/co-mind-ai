@@ -1,4 +1,3 @@
-
 import { Shield } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -25,13 +24,9 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/logos/logo.png"
+                src="/lovable-uploads/1a79f2b3-6406-4327-96a0-da0dbd6a9b7b.png"
                 alt="Co-mind Logo"
-                className="h-8 w-8 brightness-0 saturate-100 invert-[0.4] sepia-[1] hue-rotate-[200deg] brightness-[1.2]"
-                style={{
-                  filter:
-                    "brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(120%)",
-                }}
+                className="h-8 w-8"
               />
               <span className="text-xl font-bold text-white">Co-mind</span>
             </div>
