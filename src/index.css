@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,8 +61,8 @@
 
 .hero-glow {
   background: 
-    radial-gradient(circle at 50% 50%, rgba(33, 83, 252, 0.6) 0%, rgba(33, 83, 252, 0.4) 25%, rgba(33, 83, 252, 0.2) 40%, rgba(33, 83, 252, 0.1) 60%, transparent 80%),
-    radial-gradient(circle at 50% 50%, rgba(230, 1, 254, 0.3) 0%, rgba(230, 1, 254, 0.15) 30%, transparent 60%);
+    radial-gradient(circle at 50% 50%, rgba(33, 83, 252, 0.2) 0%, rgba(33, 83, 252, 0.1) 30%, rgba(33, 83, 252, 0.05) 50%, transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(230, 1, 254, 0.1) 0%, rgba(230, 1, 254, 0.05) 25%, transparent 50%);
 }
 
 .feature-card {
@@ -76,5 +75,5 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.15;
+  opacity: 0.1;
 }
