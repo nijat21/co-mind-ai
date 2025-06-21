@@ -81,3 +81,19 @@
     radial-gradient(circle at 50% 50%, transparent 1100px, rgba(59, 130, 246, 0.008) 1102px, rgba(59, 130, 246, 0.008) 1104px, transparent 1106px);
   opacity: 0.4;
 }
+
+.hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  33% { 
+    transform: translateY(-10px) rotate(1deg); 
+  }
+  66% { 
+    transform: translateY(5px) rotate(-1deg); 
+  }
+}

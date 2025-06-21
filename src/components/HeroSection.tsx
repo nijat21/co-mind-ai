@@ -82,12 +82,12 @@ export function HeroSection() {
       {floatingIcons.map((item, index) => (
         <div
           key={index}
-          className={`absolute transition-all duration-1000 ${isVisible ? 'opacity-60 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`absolute transition-all duration-1000 ${isVisible ? 'opacity-60 translate-y-0' : 'opacity-0 translate-y-10'} hero-float`}
           style={{
             left: item.x,
             top: item.y,
             transitionDelay: `${item.delay}s`,
-            animation: `float 6s ease-in-out infinite ${item.delay}s`
+            animationDelay: `${item.delay}s`
           }}
         >
           <div className="w-12 h-12 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-lg flex items-center justify-center hover:border-primary-500/50 transition-colors">
@@ -187,14 +187,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-10px) rotate(1deg); }
-          66% { transform: translateY(5px) rotate(-1deg); }
-        }
-      `}</style>
     </section>
   );
 }
