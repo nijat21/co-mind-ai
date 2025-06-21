@@ -1,4 +1,5 @@
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -71,8 +72,12 @@
 
 .grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(59, 130, 246, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.25) 1px, transparent 1px);
-  background-size: 120px 120px;
-  opacity: 0.3;
+    radial-gradient(circle at 50% 50%, transparent 80px, rgba(59, 130, 246, 0.15) 82px, rgba(59, 130, 246, 0.15) 84px, transparent 86px),
+    radial-gradient(circle at 50% 50%, transparent 160px, rgba(59, 130, 246, 0.12) 162px, rgba(59, 130, 246, 0.12) 164px, transparent 166px),
+    radial-gradient(circle at 50% 50%, transparent 240px, rgba(59, 130, 246, 0.1) 242px, rgba(59, 130, 246, 0.1) 244px, transparent 246px),
+    radial-gradient(circle at 50% 50%, transparent 320px, rgba(59, 130, 246, 0.08) 322px, rgba(59, 130, 246, 0.08) 324px, transparent 326px),
+    radial-gradient(circle at 50% 50%, transparent 400px, rgba(59, 130, 246, 0.06) 402px, rgba(59, 130, 246, 0.06) 404px, transparent 406px),
+    radial-gradient(circle at 50% 50%, transparent 480px, rgba(59, 130, 246, 0.05) 482px, rgba(59, 130, 246, 0.05) 484px, transparent 486px);
+  opacity: 0.4;
 }
+
