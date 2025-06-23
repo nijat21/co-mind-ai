@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -29,13 +28,9 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/logos/logo.png"
+              src="/lovable-uploads/0a06e271-99fd-49e1-b84d-2e3a166cbbc2.png"
               alt="Co-mind Logo"
-              className="h-8 w-8 brightness-0 saturate-100 invert-[0.4] sepia-[1] hue-rotate-[200deg] brightness-[1.2]"
-              style={{
-                filter:
-                  "brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(120%)",
-              }}
+              className="h-8 w-8"
             />
             <span className="text-xl font-bold text-white">Co-mind</span>
           </Link>
@@ -177,4 +172,3 @@ export function Navigation() {
     </nav>
   );
 }
-
