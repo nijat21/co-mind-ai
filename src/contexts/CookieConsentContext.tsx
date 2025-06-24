@@ -6,6 +6,7 @@ interface CookieConsentContextType {
   acceptedCookies: boolean;
   acceptCookies: () => void;
   declineCookies: () => void;
+  loadAnalyticsScripts: () => void;
 }
 
 const CookieConsentContext = createContext<CookieConsentContextType | undefined>(undefined);
@@ -22,6 +23,30 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
   const [showBanner, setShowBanner] = useState(false);
   const [acceptedCookies, setAcceptedCookies] = useState(false);
 
+  const loadAnalyticsScripts = () => {
+    // Google Analytics 4 example
+    if (typeof window !== 'undefined') {
+      // Load Google Analytics
+      const gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
+      document.head.appendChild(gaScript);
+
+      // Initialize GA
+      const gaConfigScript = document.createElement('script');
+      gaConfigScript.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+      `;
+      document.head.appendChild(gaConfigScript);
+
+      // You can add other analytics scripts here
+      console.log('Analytics scripts loaded');
+    }
+  };
+
   useEffect(() => {
     // Check if user has already made a choice
     const cookieConsent = localStorage.getItem('cookieConsent');
@@ -29,7 +54,13 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
       // Show banner if no choice has been made
       setShowBanner(true);
     } else {
-      setAcceptedCookies(cookieConsent === 'accepted');
+      const accepted = cookieConsent === 'accepted';
+      setAcceptedCookies(accepted);
+      
+      // Load analytics scripts if cookies were previously accepted
+      if (accepted) {
+        loadAnalyticsScripts();
+      }
     }
   }, []);
 
@@ -37,6 +68,10 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem('cookieConsent', 'accepted');
     setAcceptedCookies(true);
     setShowBanner(false);
+    
+    // Load analytics scripts when cookies are accepted
+    loadAnalyticsScripts();
+    
     console.log('Cookies accepted - Analytics and functional cookies enabled');
   };
 
@@ -52,7 +87,8 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
       showBanner,
       acceptedCookies,
       acceptCookies,
-      declineCookies
+      declineCookies,
+      loadAnalyticsScripts
     }}>
       {children}
     </CookieConsentContext.Provider>
