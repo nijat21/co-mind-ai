@@ -42,6 +42,7 @@ const solutionFeatures = [{
 export function FeaturesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -55,9 +56,11 @@ export function FeaturesSection() {
     }
     return () => observer.disconnect();
   }, []);
-  return <section ref={sectionRef} id="features" className="py-24 bg-gray-900/30 backdrop-blur-sm">
+
+  return (
+    <section ref={sectionRef} id="features" className="py-24 bg-gray-900/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Secure AI Chat with
             <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Open Source Models</span>
@@ -135,17 +138,19 @@ export function FeaturesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {solutionFeatures.map((feature, index) => <div key={index} className={`text-center transition-all duration-500
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
-          transitionDelay: `${0.8 + index * 0.2}s`
-        }}>
+          {solutionFeatures.map((feature, index) => (
+            <div key={index} className={`text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
+              transitionDelay: `${0.8 + index * 0.2}s`
+            }}>
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl mb-6">
                 <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
               <p className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto">{feature.description}</p>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
