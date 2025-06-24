@@ -24,11 +24,15 @@ export function HeroSection() {
       {/* Background Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
 
+      {/* Animated Glow Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-accent-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-primary-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
       {/* Hero Glow */}
       <div className="absolute inset-0 hero-glow"></div>
-
-      {/* Sun Glow Effect - Upper Left */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-radial from-primary-400/20 via-primary-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
