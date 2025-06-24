@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -60,7 +61,8 @@
 }
 
 .hero-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(33, 83, 252, 0.3) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 50%, rgba(33, 83, 252, 0.4) 0%, rgba(230, 1, 254, 0.2) 30%, transparent 70%);
+  animation: glow-pulse 4s ease-in-out infinite;
 }
 
 .feature-card {
@@ -70,8 +72,19 @@
 
 .grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
   background-size: 120px 120px;
-  opacity: 0.15;
+  opacity: 0.2;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }

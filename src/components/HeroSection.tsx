@@ -22,50 +22,51 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 grid-bg opacity-30"></div>
+      {/* Enhanced Background Grid */}
+      <div className="absolute inset-0 grid-bg opacity-40"></div>
 
-      {/* Hero Glow */}
+      {/* Enhanced Hero Glow with multiple layers */}
       <div className="absolute inset-0 hero-glow"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-primary-500/30 via-primary-600/20 to-transparent"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-accent-400/40 to-transparent rounded-full blur-3xl animate-pulse"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          <div className="flex justify-center mb-6">
-            <div className="flex items-center space-x-2 bg-primary-900/50 border border-primary-700/50 rounded-full px-4 py-2">
-              <Shield className="h-4 w-4 text-primary-400" />
-              <span className="text-sm text-primary-300">
+          <div className="flex justify-center mb-8">
+            <div className="flex items-center space-x-2 bg-primary-900/60 border border-primary-700/60 rounded-full px-6 py-3 shadow-2xl backdrop-blur-sm">
+              <Shield className="h-5 w-5 text-primary-300" />
+              <span className="text-sm font-medium text-primary-200">
                 Enterprise-Grade Security
               </span>
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Private AI Platform
-            <br />
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight">
+            <span className="block">Private AI Platform</span>
+            <span className="block bg-gradient-to-r from-primary-300 via-primary-400 to-accent-300 bg-clip-text text-transparent drop-shadow-2xl text-6xl md:text-8xl lg:text-9xl">
               for Enterprise
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-10 max-w-4xl mx-auto leading-relaxed font-light">
             Take control of AI with Co-mind's self-hosted platform. Keep your confidential data secure while unlocking enterprise-grade AI capabilities.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 text-lg"
+              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-10 py-5 text-xl font-semibold shadow-2xl transform hover:scale-105 transition-all duration-300"
               onClick={() =>
                 window.open("https://app.co-mind.ai/register", "_blank")
               }
             >
               Start Free Trial
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-gray-700 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg"
+              className="border-2 border-gray-600 text-gray-200 hover:bg-gray-800 hover:border-gray-500 px-10 py-5 text-xl font-semibold shadow-xl backdrop-blur-sm transform hover:scale-105 transition-all duration-300"
               onClick={handleBookDemo}
             >
               Book Demo
