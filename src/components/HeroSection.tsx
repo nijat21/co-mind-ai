@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
@@ -27,6 +26,9 @@ export function HeroSection() {
 
       {/* Hero Glow */}
       <div className="absolute inset-0 hero-glow"></div>
+
+      {/* Sun Glow Effect - Upper Left */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-radial from-primary-400/20 via-primary-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
