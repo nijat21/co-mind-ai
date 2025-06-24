@@ -95,7 +95,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="text-center">
+          <div className="text-center mb-12">
             <h3 className="text-lg font-medium text-gray-400 mb-8 tracking-wider uppercase">Our Partners and Advisors</h3>
             <div className="flex justify-center items-center gap-12 max-w-4xl mx-auto flex-wrap">
               {partners.map((partner, index) => (
@@ -111,6 +111,13 @@ export function HeroSection() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Bottom Motto */}
+          <div className="pt-8 border-t border-gray-800/50">
+            <h2 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-accent-300 via-primary-300 to-accent-400 bg-clip-text text-transparent">
+              Be the Hero. Own Your AI
+            </h2>
           </div>
         </div>
       </div>
