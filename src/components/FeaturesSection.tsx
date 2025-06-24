@@ -1,3 +1,4 @@
+
 import { MessageSquare, Shield, Server, Users, Database, Zap, Bot } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -34,8 +35,8 @@ const solutionFeatures = [{
   iconColor: "text-green-400"
 }, {
   icon: Bot,
-  title: "AI Agents",
-  description: "Deploy autonomous AI agents that can perform complex tasks, automate workflows, and integrate with your existing systems while maintaining complete privacy.",
+  title: "Agents",
+  description: "AI agents automate workflows by handling repetitive tasks such as analyzing data, scheduling processes, and responding to user requests. Easily build, configure and schedule AI agents that connect your processes and your data with powerful AI models.",
   iconColor: "text-purple-400"
 }];
 
