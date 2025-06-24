@@ -1,4 +1,3 @@
-
 import { MessageSquare, Shield, Server, Users, Database, Zap, Bot } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -36,7 +35,7 @@ const solutionFeatures = [{
 }, {
   icon: Bot,
   title: "Agents",
-  description: "AI agents automate workflows by handling repetitive tasks such as analyzing data, scheduling processes, and responding to user requests. Easily build, configure and schedule AI agents that connect your processes and your data with powerful AI models.",
+  description: "AI agents that automate workflows by handling repetitive tasks such as analyzing data, drawing insights and comparing documents.",
   iconColor: "text-purple-400"
 }];
 
@@ -61,7 +60,7 @@ export function FeaturesSection() {
   return (
     <section ref={sectionRef} id="features" className="py-24 bg-gray-900/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Secure AI Chat with
             <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Open Source Models</span>
