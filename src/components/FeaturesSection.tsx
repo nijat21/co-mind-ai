@@ -1,4 +1,4 @@
-import { MessageSquare, Shield, Server, Users, Database, Zap } from "lucide-react";
+import { MessageSquare, Shield, Server, Users, Database, Zap, Bot } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Open source LLM logos using the uploaded model icons (excluding Kokoro for single line fit)
@@ -21,6 +21,7 @@ const openSourceLLMs = [{
   name: "Nomic Embed",
   icon: "/lovable-uploads/5b05b1c9-40c3-4889-9687-59e1912a4314.png"
 }];
+
 const solutionFeatures = [{
   icon: MessageSquare,
   title: "Private AI Chat",
@@ -31,7 +32,13 @@ const solutionFeatures = [{
   title: "Your Infrastructure",
   description: "Deploy on your private cloud, data centers, or AI appliances. Complete control over where your AI runs and how your data is processed.",
   iconColor: "text-green-400"
+}, {
+  icon: Bot,
+  title: "AI Agents",
+  description: "Deploy autonomous AI agents that can perform complex tasks, automate workflows, and integrate with your existing systems while maintaining complete privacy.",
+  iconColor: "text-purple-400"
 }];
+
 export function FeaturesSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -50,7 +57,7 @@ export function FeaturesSection() {
   }, []);
   return <section ref={sectionRef} id="features" className="py-24 bg-gray-900/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Secure AI Chat with
             <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Open Source Models</span>
@@ -127,7 +134,7 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {solutionFeatures.map((feature, index) => <div key={index} className={`text-center transition-all duration-500
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
           transitionDelay: `${0.8 + index * 0.2}s`
