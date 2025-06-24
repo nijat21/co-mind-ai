@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
 const partners = [
-  { name: "NVIDIA", logo: "/lovable-uploads/d6f17c4a-455b-43c0-a2e2-57989baef211.png" },
-  { name: "Intel", logo: "/lovable-uploads/8b67e1b2-2852-4bd9-9a35-19ddb3116b8e.png" },
-  { name: "Microsoft Founders Hub", logo: "/lovable-uploads/b5dfab8c-6b7c-49bf-81bc-9e836e953dd7.png" }
+  { name: "NVIDIA", logo: "/lovable-uploads/ffe1be4c-ce36-46e5-9889-158ad919a30a.png" },
+  { name: "Intel", logo: "/lovable-uploads/e546445f-0181-44f2-b37b-3b37f2565b75.png" },
+  { name: "Microsoft Founders Hub", logo: "/lovable-uploads/91cb03fe-b2a1-4358-8d91-b006b14f0815.png" }
 ];
 
 export function HeroSection() {
