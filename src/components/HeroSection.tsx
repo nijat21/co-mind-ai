@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
@@ -24,11 +23,6 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
-
-      {/* Central Expanding Glow Effect */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-4 h-4 bg-primary-500/30 rounded-full animate-[expand-glow_3s_ease-out_forwards]"></div>
-      </div>
 
       {/* Animated Glow Effects */}
       <div className="absolute inset-0">
