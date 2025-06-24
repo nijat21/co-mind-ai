@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Zap, Lock } from "lucide-react";
 
@@ -32,13 +31,6 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* Motto */}
-          <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-accent-300 via-primary-300 to-accent-400 bg-clip-text text-transparent">
-              Be the Hero. Own Your AI
-            </h2>
-          </div>
-
           <div className="flex justify-center mb-8">
             <div className="flex items-center space-x-2 bg-primary-900/60 border border-primary-700/60 rounded-full px-6 py-3 shadow-2xl backdrop-blur-sm">
               <Shield className="h-5 w-5 text-primary-300" />
