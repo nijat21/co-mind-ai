@@ -25,26 +25,6 @@ export function HeroSection() {
       {/* Background Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
 
-      {/* Enhanced Animated Glow Effects */}
-      <div className="absolute inset-0">
-        {/* Primary large glow - upper left */}
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
-        
-        {/* Secondary glow - center right */}
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-bl from-cyan-400/25 via-blue-600/15 to-transparent rounded-full blur-2xl animate-pulse delay-1000"></div>
-        
-        {/* Tertiary glow - bottom center */}
-        <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-gradient-to-t from-indigo-500/20 via-violet-400/15 to-transparent rounded-full blur-3xl animate-pulse delay-2000"></div>
-        
-        {/* Small floating orbs */}
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-radial from-pink-400/30 to-transparent rounded-full blur-xl animate-pulse delay-500"></div>
-        <div className="absolute top-1/4 right-1/3 w-24 h-24 bg-gradient-radial from-emerald-400/25 to-transparent rounded-full blur-xl animate-pulse delay-1500"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-gradient-radial from-amber-400/20 to-transparent rounded-full blur-2xl animate-pulse delay-3000"></div>
-        
-        {/* Ambient glow overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-indigo-900/10 opacity-60"></div>
-      </div>
-
       {/* Hero Glow */}
       <div className="absolute inset-0 hero-glow"></div>
 
