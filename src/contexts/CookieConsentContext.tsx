@@ -42,7 +42,9 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
       `;
       document.head.appendChild(gaConfigScript);
 
-      // You can add other analytics scripts here
+      // Set functional cookie to track analytics loading
+      document.cookie = `analytics_loaded=true;expires=${new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString()};path=/;SameSite=Lax;Secure`;
+      
       console.log('Analytics scripts loaded');
     }
   };

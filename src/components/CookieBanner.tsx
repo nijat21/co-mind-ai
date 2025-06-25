@@ -3,11 +3,18 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Cookie, Shield, BarChart3 } from 'lucide-react';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
+import { useCookieManager } from '@/hooks/useCookieManager';
 
 export const CookieBanner = () => {
   const { showBanner, acceptCookies, declineCookies } = useCookieConsent();
+  const { clearAllAnalyticsCookies } = useCookieManager();
 
   if (!showBanner) return null;
+
+  const handleDecline = () => {
+    clearAllAnalyticsCookies();
+    declineCookies();
+  };
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700/50 p-4 md:p-6">
@@ -41,7 +48,7 @@ export const CookieBanner = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={declineCookies}
+              onClick={handleDecline}
               className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500"
             >
               Decline Optional
