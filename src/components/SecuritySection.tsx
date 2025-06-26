@@ -1,4 +1,3 @@
-
 import { Shield, Lock, Server, Eye } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -30,7 +29,7 @@ export function SecuritySection() {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               AI peace of mind with
-              <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> zero data leaks</span>
+              <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent"> zero data leaks</span>
             </h2>
             <p className="text-xl text-gray-400 mb-8 leading-relaxed">
               Unlike cloud-based AI tools, Co-mind ensures your sensitive data never leaves your network. Complete control, complete privacy.
