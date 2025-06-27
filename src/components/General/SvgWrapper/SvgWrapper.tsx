@@ -1,9 +1,7 @@
-
 "use client";
 import React, { useEffect, useState } from "react";
 import iconLinkedin from "../../../../public/images/icons/linkedin-svgrepo-com.svg";
-// import iconLinkedin from "../../../../public/images/icons/linkedin.svg";
-import iconLogo from "../../../../public/lovable-uploads/0a06e271-99fd-49e1-b84d-2e3a166cbbc2.png";
+import iconLogo from "../../../../public/lovable-uploads/bb59f441-b524-4bf0-9eed-f17f870e34e6.png";
 
 export enum SvgId {
   Linkedin = "Linkedin",

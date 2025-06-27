@@ -28,7 +28,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/lovable-uploads/0a06e271-99fd-49e1-b84d-2e3a166cbbc2.png"
+              src="/lovable-uploads/bb59f441-b524-4bf0-9eed-f17f870e34e6.png"
               alt="Co-mind Logo"
               className="h-8 w-8"
             />
