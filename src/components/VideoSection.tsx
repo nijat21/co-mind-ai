@@ -13,8 +13,8 @@ export function VideoSection() {
         
         if (iframeRef.current) {
           if (entry.isIntersecting) {
-            // Start playing when visible
-            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=1&mute=1";
+            // Start playing when visible with sound
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=1";
           } else {
             // Stop playing when not visible
             iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=0";
