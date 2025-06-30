@@ -144,8 +144,7 @@ export function FeaturesSection() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl mb-6">
                 <feature.icon className={`h-8 w-8 ${feature.iconColor}`} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-md mx-auto">{feature.description}</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-white">{feature.title}</h3>
             </div>
           ))}
         </div>
