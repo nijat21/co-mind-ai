@@ -1,7 +1,40 @@
 
+import { useEffect, useRef, useState } from "react";
+
 export function VideoSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+        
+        if (iframeRef.current) {
+          if (entry.isIntersecting) {
+            // Start playing when visible
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=1&mute=1";
+          } else {
+            // Stop playing when not visible
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=0";
+          }
+        }
+      },
+      {
+        threshold: 0.5 // Trigger when 50% of the section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-20 bg-gray-900/50">
+    <section ref={sectionRef} className="py-20 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -16,7 +49,8 @@ export function VideoSection() {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-800 p-2">
             <div className="aspect-video">
               <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                ref={iframeRef}
+                src="https://www.youtube.com/embed/xcCeJkorFf4"
                 title="Co-mind Product Demo"
                 className="w-full h-full rounded-xl"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
