@@ -45,14 +45,14 @@ export function VideoSection() {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-800 p-2">
-            <div className="aspect-video">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-800">
+            <div className="aspect-video w-full">
               <iframe
                 ref={iframeRef}
                 src="https://www.youtube.com/embed/xcCeJkorFf4"
                 title="Co-mind Product Demo"
-                className="w-full h-full rounded-xl"
+                className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
