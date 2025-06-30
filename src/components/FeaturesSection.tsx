@@ -75,10 +75,18 @@ export function FeaturesSection() {
           <div className="relative max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 mb-8">
               <div className="flex items-center justify-between">
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="text-center">
-                    <MessageSquare className="h-16 w-16 text-blue-400 mx-auto mb-4" />
-                    <h3 className="text-4xl font-bold text-white">Private AI Chat</h3>
+                <div className="flex-1">
+                  <div className="flex items-center mb-4">
+                    <MessageSquare className="h-8 w-8 text-blue-400 mr-3" />
+                    <h3 className="text-2xl font-bold text-white">Private AI Chat</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="bg-gray-700/50 rounded-lg p-3 max-w-xs">
+                      <p className="text-gray-300 text-sm">How can I analyze our Q3 sales data?</p>
+                    </div>
+                    <div className="bg-primary-600/20 rounded-lg p-3 max-w-md ml-auto">
+                      <p className="text-gray-300 text-sm">I'll analyze your sales data securely. Based on the uploaded documents...</p>
+                    </div>
                   </div>
                 </div>
                 
@@ -89,10 +97,23 @@ export function FeaturesSection() {
                   </div>
                 </div>
                 
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="text-center">
-                    <Server className="h-16 w-16 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-4xl font-bold text-white">Your Private Server</h3>
+                <div className="flex-1">
+                  <div className="flex items-center mb-4">
+                    <Server className="h-8 w-8 text-green-400 mr-3" />
+                    <h3 className="text-2xl font-bold text-white">Your Private Server</h3>
+                  </div>
+                  <div className="bg-gray-700/30 rounded-lg p-4 border border-green-400/30">
+                    <div className="flex items-center justify-center space-x-4 mb-3">
+                      <Shield className="h-12 w-12 text-green-400" />
+                      <div>
+                        <p className="text-green-400 font-semibold">Self Hosted</p>
+                        <p className="text-gray-400 text-sm">Your infrastructure</p>
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-primary-400 text-sm font-medium">Running Open Large Language Models (OLLMs)</p>
+                      <p className="text-gray-500 text-xs">DeepSeek R1, Llama, Mistral & more</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -106,11 +127,12 @@ export function FeaturesSection() {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
             <div className="flex justify-center gap-4 max-w-6xl mx-auto">
-              {openSourceLLMs.map((llm, index) => <div key={index} className={`flex items-center justify-center bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 p-6 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
+              {openSourceLLMs.map((llm, index) => <div key={index} className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{
               transitionDelay: `${0.6 + index * 0.1}s`
             }}>
-                  <img src={llm.icon} alt={llm.name} className="w-20 h-20 object-contain" />
+                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain flex-shrink-0" />
+                  <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
                 </div>)}
             </div>
           </div>
