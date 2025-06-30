@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 
 export function VideoSection() {
@@ -13,11 +12,11 @@ export function VideoSection() {
         
         if (iframeRef.current) {
           if (entry.isIntersecting) {
-            // Start playing when visible with sound
-            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=1";
+            // Start playing when visible with sound, no recommended videos
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=1&rel=0";
           } else {
-            // Stop playing when not visible
-            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=0";
+            // Stop playing when not visible, no recommended videos
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=0&rel=0";
           }
         }
       },
@@ -50,7 +49,7 @@ export function VideoSection() {
             <div className="aspect-video">
               <iframe
                 ref={iframeRef}
-                src="https://www.youtube.com/embed/xcCeJkorFf4"
+                src="https://www.youtube.com/embed/xcCeJkorFf4?rel=0"
                 title="Co-mind Product Demo"
                 className="w-full h-full rounded-xl"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
