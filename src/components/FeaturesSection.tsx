@@ -1,4 +1,3 @@
-
 import { MessageSquare, Shield, Server, Users, Database, Zap, Bot } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -127,12 +126,11 @@ export function FeaturesSection() {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
             <div className="flex justify-center gap-4 max-w-6xl mx-auto">
-              {openSourceLLMs.map((llm, index) => <div key={index} className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-4 py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
+              {openSourceLLMs.map((llm, index) => <div key={index} className={`flex items-center justify-center bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 p-6 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-32 h-24
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{
               transitionDelay: `${0.6 + index * 0.1}s`
             }}>
-                  <img src={llm.icon} alt={llm.name} className="w-8 h-8 object-contain flex-shrink-0" />
-                  <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
+                  <img src={llm.icon} alt={llm.name} className="w-16 h-16 object-contain" />
                 </div>)}
             </div>
           </div>
