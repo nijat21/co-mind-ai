@@ -2,8 +2,11 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Documentation = () => {
+  const navigate = useNavigate();
+
   const videos = [
     {
       id: "getting-started",
@@ -34,6 +37,17 @@ const Documentation = () => {
       duration: "8:30"
     }
   ];
+
+  const handleBookDemo = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/comind-ai-social/30min",
+      });
+    } else {
+      // Fallback to contact page
+      navigate("/contact");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-950">
@@ -100,20 +114,18 @@ const Documentation = () => {
               Our support team is here to help you succeed with Co-mind
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://app.co-mind.ai/support"
-                target="_blank"
+              <button
+                onClick={() => navigate("/contact")}
                 className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-md font-medium transition-colors"
               >
-                Contact Support
-              </a>
-              <a
-                href="https://app.co-mind.ai/register"
-                target="_blank"
+                Contact Us
+              </button>
+              <button
+                onClick={handleBookDemo}
                 className="border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-6 py-3 rounded-md font-medium transition-colors"
               >
-                Start Free Trial
-              </a>
+                Book Demo
+              </button>
             </div>
           </div>
         </section>
