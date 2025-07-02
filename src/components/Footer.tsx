@@ -65,6 +65,14 @@ export function Footer() {
                 </button>
               </li>
               <li>
+                <Link
+                  to="/documentation"
+                  className="hover:text-white transition-colors"
+                >
+                  Documentation
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://app.co-mind.ai/register"
                   target="_blank"

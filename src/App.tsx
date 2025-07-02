@@ -10,6 +10,7 @@ import { AnalyticsTracker } from "@/components/AnalyticsTracker";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Documentation from "./pages/Documentation";
 import LegalNotice from "./pages/LegalNotice";
 import PrivacyNotice from "./pages/PrivacyNotice";
 import CookiePolicy from "./pages/CookiePolicy";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/support" element={<Contact />} />
+            <Route path="/documentation" element={<Documentation />} />
             <Route path="/legal-notice" element={<LegalNotice />} />
             <Route path="/privacy-notice" element={<PrivacyNotice />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
