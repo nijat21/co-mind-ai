@@ -1,5 +1,4 @@
-
-import { MessageSquare, Shield, Server, Users, Database, Zap, Bot } from "lucide-react";
+import { MessageSquare, Shield, Server, Users, Database, Zap, Bot, Building2, Key } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Open source LLM logos using the uploaded model icons (excluding Kokoro for single line fit)
@@ -35,9 +34,24 @@ const solutionFeatures = [{
   iconColor: "text-green-400"
 }, {
   icon: Bot,
-  title: "Agents",
-  description: "AI agents that automate workflows by handling repetitive tasks such as analyzing data, drawing insights and comparing documents.",
+  title: "AI Agents",
+  description: "AI agents that automate workflows by handling repetitive tasks such as analyzing data, drawing insights and comparing documents with customizable prompts.",
   iconColor: "text-purple-400"
+}, {
+  icon: Database,
+  title: "Knowledge Bases",
+  description: "Upload and vectorize your documents for semantic search. AI finds exactly what you need from your company knowledge without manual searching.",
+  iconColor: "text-orange-400"
+}, {
+  icon: Building2,
+  title: "Organization Management",
+  description: "Create organizations, add team members with role-based access, and control knowledge sharing across your company while maintaining data privacy.",
+  iconColor: "text-cyan-400"
+}, {
+  icon: Key,
+  title: "Public AI Models",
+  description: "Access closed AI models like GPTs by adding your API keys. Toggle between private and public models while maintaining organizational control.",
+  iconColor: "text-pink-400"
 }];
 
 export function FeaturesSection() {
@@ -63,10 +77,10 @@ export function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-            Secure AI Chat with
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Open Source Models</span>
+            Complete AI Platform with
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"> Enterprise Features</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-8 md:mb-12">Chat with powerful AI models that run entirely on your private servers - giving you both the AI chat interface and the self-hosted deployment. No data ever leaves your environment.</p>
+          <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-8 md:mb-12">Chat with powerful AI models that run entirely on your private servers, access public models like GPTs, and manage your organization's AI capabilities with complete control over data and access.</p>
         </div>
         
         <div className={`mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
@@ -125,7 +139,7 @@ export function FeaturesSection() {
         transitionDelay: '0.5s'
       }}>
           <div className="text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Supports Leading AI Models</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Supports Open Source & Closed AI Models</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-6xl mx-auto">
               {openSourceLLMs.map((llm, index) => <div key={index} className={`flex flex-col items-center space-y-2 bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 px-3 py-3 md:px-4 md:py-4 rounded-xl transition-all duration-500 hover:border-primary-500/50 hover:scale-105 w-full h-20 md:h-24
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{
@@ -135,13 +149,14 @@ export function FeaturesSection() {
                   <span className="text-gray-300 text-xs font-medium text-center leading-tight">{llm.name}</span>
                 </div>)}
             </div>
+            <p className="text-gray-400 text-sm mt-4">Plus access to GPTs and other closed models with your API keys</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {solutionFeatures.map((feature, index) => (
             <div key={index} className={`text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
-              transitionDelay: `${0.8 + index * 0.2}s`
+              transitionDelay: `${0.8 + index * 0.15}s`
             }}>
               <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl mb-4 md:mb-6">
                 <feature.icon className={`h-7 w-7 md:h-8 md:w-8 ${feature.iconColor}`} />
