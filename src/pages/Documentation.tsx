@@ -3,9 +3,40 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const Documentation = () => {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+        
+        if (iframeRef.current) {
+          if (entry.isIntersecting) {
+            // Start playing when visible with sound, no recommended videos
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=1&rel=0";
+          } else {
+            // Stop playing when not visible, no recommended videos
+            iframeRef.current.src = "https://www.youtube.com/embed/xcCeJkorFf4?autoplay=0&rel=0";
+          }
+        }
+      },
+      {
+        threshold: 0.5 // Trigger when 50% of the section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const videos = [
     {
@@ -66,9 +97,43 @@ const Documentation = () => {
           </div>
         </section>
 
+        {/* Intro Video Section */}
+        <section ref={sectionRef} className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Intro to Co-mind
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Watch how easy it is to deploy and manage your private AI infrastructure with Co-mind's enterprise platform.
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-800 p-2">
+                <div className="aspect-video">
+                  <iframe
+                    ref={iframeRef}
+                    src="https://www.youtube.com/embed/xcCeJkorFf4?rel=0"
+                    title="Co-mind Product Demo"
+                    className="w-full h-full rounded-xl"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Video Grid */}
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Tutorial Videos
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {videos.map((video) => (
                 <div
